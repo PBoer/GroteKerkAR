@@ -5,10 +5,13 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
+    private GameObject _overlay;
 
     void Awake()
     {
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
+        _overlay = GameObject.Find("MainOverlay");
+        DisableOverlay();
     }
 
     // Use this for initialization
@@ -24,5 +27,15 @@ public class GameManager : MonoBehaviour {
     public void TestBoop()
     {
         Debug.Log("Success");
+    }
+
+    public void EnableOverlay()
+    {
+        _overlay.SetActive(true);
+    }
+
+    public void DisableOverlay()
+    {
+        _overlay.SetActive(false);
     }
 }
