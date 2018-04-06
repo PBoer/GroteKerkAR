@@ -44,4 +44,9 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
+
+    public string GetCurrentScene()
+    {
+        return SceneManager.GetActiveScene().name;
+    }
 }
