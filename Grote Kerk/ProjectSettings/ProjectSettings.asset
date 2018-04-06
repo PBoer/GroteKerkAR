@@ -157,7 +157,10 @@ PlayerSettings:
   resolutionScalingMode: 0
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
-  applicationIdentifier: {}
+  applicationIdentifier:
+    Android: com.Zero38Games.GroteKerk
+    Standalone: com.Zero38Games.GroteKerk
+    iOS: com.Zero38Games.GroteKerk
   buildNumber: {}
   AndroidBundleVersionCode: 1
   AndroidMinSdkVersion: 16
