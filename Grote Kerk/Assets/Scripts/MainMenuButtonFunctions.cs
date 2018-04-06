@@ -26,6 +26,6 @@ public class MainMenuButtonFunctions : MonoBehaviour {
 
     public void Settings()
     {
-        Debug.Log("Instellingen TODO");
+        GameManager.Instance.ChangeScene("Settings");
     }
 }
