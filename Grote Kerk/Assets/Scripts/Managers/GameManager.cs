@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
     private GameObject _overlay;
+    private string previousScene = "MenuMain";
 
     void Awake()
     {
@@ -42,11 +43,17 @@ public class GameManager : MonoBehaviour {
 
     public void ChangeScene(string scene)
     {
+        previousScene = GetCurrentScene();
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
     public string GetCurrentScene()
     {
         return SceneManager.GetActiveScene().name;
+    }
+
+    public void GoToPreviousScene()
+    {
+        ChangeScene(previousScene);
     }
 }
