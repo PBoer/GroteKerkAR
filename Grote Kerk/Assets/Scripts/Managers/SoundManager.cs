@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
 
+    public static AudioClip testSound;
     public static SoundManager Instance { get; private set; }
 
     void Awake()
@@ -13,7 +14,7 @@ public class SoundManager : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+        //testSound = Resources.Load<AudioClip> ("");
 	}
 	
 	// Update is called once per frame
