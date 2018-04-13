@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -1858,6 +1858,7 @@ GameObject:
   - component: {fileID: 1839206191}
   - component: {fileID: 1839206192}
   - component: {fileID: 1839206193}
+  - component: {fileID: 1839206194}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1900,6 +1901,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b887ff724d38684588aafc05dc54ce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1839206194
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1839206190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49529135484b46947911a0ae44f40bb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioMixer: {fileID: 24100000, guid: 67d3e4b5ad28091458d490c62a5a1d8f, type: 2}
 --- !u!1 &1992680518
 GameObject:
   m_ObjectHideFlags: 0

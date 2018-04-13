@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour {
 
     public static AudioClip testSound;
     public static SoundManager Instance { get; private set; }
+    public AudioMixer audioMixer;
 
     void Awake()
     {
@@ -21,4 +23,14 @@ public class SoundManager : MonoBehaviour {
 	void Update () {
 		
 	}
+
+    public void SetMusic(float music)
+    {
+        audioMixer.SetFloat("Music", music);
+    }
+
+    public void SetDialog(float dialog)
+    {
+        audioMixer.SetFloat("Dialog", dialog);
+    }
 }

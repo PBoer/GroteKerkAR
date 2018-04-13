@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsButtonFunctions : MonoBehaviour {
 
-    public AudioMixer audioMixer;
-	// Use this for initialization
-	void Start () {
-		
-	}
+    public Slider MusicSlider;
+    public Slider SpeechSlider;
+
+    // Use this for initialization
+    void Start () {
+        if(PlayerPrefs.HasKey("Music")&& PlayerPrefs.HasKey("Music"))
+        {
+            MusicSlider.value = PlayerPrefs.GetFloat("Music");
+            SpeechSlider.value= PlayerPrefs.GetFloat("Dialog");
+        }
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -21,14 +28,16 @@ public class SettingsButtonFunctions : MonoBehaviour {
         GameManager.Instance.GoToPreviousScene();
     }
 
-    public void setMusic(float music)
+    public void SetMusic(float music)
     {
-        audioMixer.SetFloat("Music", music);
+        SoundManager.Instance.SetMusic(music);
+        PlayerPrefs.SetFloat("Music", music);
     }
 
-    public void setDialog(float dialog)
+    public void SetDialog(float dialog)
     {
-        audioMixer.SetFloat("Dialog", dialog);
+        SoundManager.Instance.SetDialog(dialog);
+        PlayerPrefs.SetFloat("Dialog", dialog);
     }
 
     public void MainMenu()
