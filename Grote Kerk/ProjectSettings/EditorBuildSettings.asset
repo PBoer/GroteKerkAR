@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: abc3829e8029ef442bbe2614eca35e2f
+  - enabled: 1
+    path: Assets/Scenes/ArchitectGame.unity
+    guid: 0a5fc767412007b49a0ef7ab62d0b7eb

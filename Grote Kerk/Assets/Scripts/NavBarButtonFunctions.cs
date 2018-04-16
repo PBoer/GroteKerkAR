@@ -51,4 +51,9 @@ public class NavBarButtonFunctions : MonoBehaviour {
     {
         Debug.Log("TODO go to role screen");
     }
+
+    public void Settings()
+    {
+        Debug.Log("TODO go to in-game settings screen");
+    }
 }
