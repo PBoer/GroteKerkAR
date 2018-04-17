@@ -54,6 +54,6 @@ public class NavBarButtonFunctions : MonoBehaviour {
 
     public void Settings()
     {
-        Debug.Log("TODO go to in-game settings screen");
+        GameManager.Instance.ChangeScene("Settings");
     }
 }
