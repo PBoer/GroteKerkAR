@@ -18,4 +18,9 @@ public class TestSceneButtonFunctions : MonoBehaviour {
     {
         GameManager.Instance.ChangeScene("MainMenu");
     }
+
+    public void ArchitectGame()
+    {
+        GameManager.Instance.ChangeScene("ArchitectGame");
+    }
 }
