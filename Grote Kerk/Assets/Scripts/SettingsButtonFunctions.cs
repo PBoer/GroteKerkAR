@@ -7,6 +7,8 @@ public class SettingsButtonFunctions : MonoBehaviour {
 
     public Slider MusicSlider;
     public Slider SpeechSlider;
+    public GameObject CreditsPanel;
+    public GameObject ResetPanel;
 
     // Use this for initialization
     void Start () {
@@ -45,13 +47,26 @@ public class SettingsButtonFunctions : MonoBehaviour {
         GameManager.Instance.ChangeScene("MainMenu");
     }
 
-    public void ResetButton()
+    public void OpenResetPanel()
     {
-        Debug.Log("TODO");
+        ResetPanel.SetActive(true);
     }
 
     public void Credits()
     {
-        Debug.Log("TODO");
+        CreditsPanel.SetActive(true);
+    }
+
+    public void CancelReset()
+    {
+        ResetPanel.SetActive(false);
+    }
+
+    public void ResetProgress()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetFloat("Music", MusicSlider.value);
+        PlayerPrefs.SetFloat("Dialog", SpeechSlider.value);
+        ResetPanel.SetActive(false);
     }
 }
