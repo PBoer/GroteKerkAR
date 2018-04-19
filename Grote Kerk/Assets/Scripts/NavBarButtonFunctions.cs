@@ -34,7 +34,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
 
     public void Map()
     {
-        Debug.Log("TODO go to map screen");
+        if (GameManager.Instance.GetCurrentScene() == "Map")
+        {
+            Debug.Log("Already in test scene");
+        }
+        else
+        {
+            GameManager.Instance.ChangeScene("Map");
+        }
     }
 
     public void Hints()

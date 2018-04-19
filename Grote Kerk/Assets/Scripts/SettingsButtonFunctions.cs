@@ -64,7 +64,7 @@ public class SettingsButtonFunctions : MonoBehaviour {
 
     public void Instructions()
     {
-        GameManager.Instance.ChangeScene("MainMenu");
+        GameManager.Instance.ChangeScene("Instructions");
     }
 
     public void ResetProgress()
