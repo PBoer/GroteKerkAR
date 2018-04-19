@@ -62,6 +62,11 @@ public class SettingsButtonFunctions : MonoBehaviour {
         ResetPanel.SetActive(false);
     }
 
+    public void Instructions()
+    {
+        GameManager.Instance.ChangeScene("MainMenu");
+    }
+
     public void ResetProgress()
     {
         PlayerPrefs.DeleteAll();
