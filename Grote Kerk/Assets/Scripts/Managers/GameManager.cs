@@ -7,7 +7,9 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
     private GameObject _overlay;
-    private string previousScene = "MenuMain";
+    private string previousScene = "MainMenu";
+    private string twoScenesBack = "MainMenu";
+
 
     void Awake()
     {
@@ -43,7 +45,12 @@ public class GameManager : MonoBehaviour {
 
     public void ChangeScene(string scene)
     {
-        previousScene = GetCurrentScene();
+        // prevents player getting stuk in a endless back button loop
+        if (GetCurrentScene() != "Instructions" && GetCurrentScene() != previousScene)
+        {
+            twoScenesBack = previousScene;
+            previousScene = GetCurrentScene();
+        }
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 
@@ -52,8 +59,19 @@ public class GameManager : MonoBehaviour {
         return SceneManager.GetActiveScene().name;
     }
 
+    /// <summary>
+    /// sends you back to Previous scene with 2 exeptions
+    /// </summary>
     public void GoToPreviousScene()
     {
-        ChangeScene(previousScene);
+        // prevents player getting stuk in a endless back button loop
+        if (previousScene == "Instructions" || GetCurrentScene() == previousScene)
+        {
+            ChangeScene(twoScenesBack);
+        }
+        else
+        {
+            ChangeScene(previousScene);
+        }
     }
 }
