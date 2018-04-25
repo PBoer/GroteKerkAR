@@ -48,11 +48,12 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         Vector3 rayDir = (transform.position - cameraPos);
         RaycastHit hit;
 
-        // Check if the raycast hits anything besides the player controlled layer
         if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
         {
             myCollider.enabled = false;
-            transform.position = hit.point;
+            Destroy(hit.transform.gameObject);
+            transform.position = hit.transform.position;
+            transform.rotation = hit.transform.rotation;
             
         }
         else
