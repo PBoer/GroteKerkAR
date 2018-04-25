@@ -23,3 +23,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Instructions.unity
     guid: 49d14f195b041454180e65184de9ce60
+  - enabled: 1
+    path: Assets/Scenes/Map.unity
+    guid: 42a084c3780112649b845cad48019838
