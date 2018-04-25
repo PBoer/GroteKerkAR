@@ -23,7 +23,7 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         newCube.transform.parent = gameObject.transform.parent;
         newCube.transform.position = gameObject.transform.position;
         newCube.transform.rotation = gameObject.transform.rotation;
-        transform.parent = null;
+        newCube.transform.localScale = gameObject.transform.localScale;
     }
 
     /*
@@ -51,6 +51,8 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
         {
             myCollider.enabled = false;
+            transform.parent = hit.transform.parent;
+            transform.localScale = hit.transform.localScale;
             Destroy(hit.transform.gameObject);
             transform.position = hit.transform.position;
             transform.rotation = hit.transform.rotation;
