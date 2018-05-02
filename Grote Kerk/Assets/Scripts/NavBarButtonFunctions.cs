@@ -21,14 +21,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
 
     public void Scanner()
     {
-        if(GameManager.Instance.GetCurrentScene() == "TestScene")
+        if(GameManager.Instance.GetCurrentScene() == "MainGame")
         {
             Debug.Log("Already in test scene");
         }
         else
         {
             Debug.Log("Not in test scene");
-            GameManager.Instance.ChangeScene("TestScene");
+            GameManager.Instance.ChangeScene("MainGame");
         }
     }
 

@@ -16,7 +16,7 @@ public class MainMenuButtonFunctions : MonoBehaviour {
 
     public void StartGame()
     {
-        GameManager.Instance.ChangeScene("TestScene");
+        GameManager.Instance.ChangeScene("MainGame");
     }
 
     public void Instructions()
