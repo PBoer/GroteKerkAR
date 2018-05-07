@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.3731193, g: 0.38073996, b: 0.35872698, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -503,6 +503,7 @@ GameObject:
   - component: {fileID: 447767034}
   - component: {fileID: 447767036}
   - component: {fileID: 447767035}
+  - component: {fileID: 447767037}
   m_Layer: 5
   m_Name: MinigameCounter
   m_TagString: Untagged
@@ -567,6 +568,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 447767033}
+--- !u!114 &447767037
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 447767033}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1ffe06b0bcb1934aa0fa1c251d28136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &480365782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1440,6 +1452,7 @@ GameObject:
   - component: {fileID: 1133179923}
   - component: {fileID: 1133179925}
   - component: {fileID: 1133179924}
+  - component: {fileID: 1133179926}
   m_Layer: 5
   m_Name: HistoryCounter
   m_TagString: Untagged
@@ -1504,6 +1517,17 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1133179922}
+--- !u!114 &1133179926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1133179922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a2ff460b298a8564eb99501bb29b0231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1547268167
 GameObject:
   m_ObjectHideFlags: 0

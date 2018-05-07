@@ -20,7 +20,6 @@ public class InstructionsButtonFunctions : MonoBehaviour {
     // Use this for initialization
     void Start() {
         DisablePanels();
-        // TODO check player prefs to disable buttons
         foreach (GameObject contentButton in contentButtons)
         {
             switch (PlayerPrefs.GetInt(contentButton.name))
