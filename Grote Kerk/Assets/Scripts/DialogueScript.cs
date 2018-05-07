@@ -6,7 +6,6 @@ using UnityEngine.UI;
 public class DialogueScript : MonoBehaviour {
 
     public float letterPause = 0.2f;
-    public AudioClip sound;
 
     private string scene;
     private GameObject dialogueCanvas;
@@ -14,6 +13,7 @@ public class DialogueScript : MonoBehaviour {
     private List<string> messages;
     private string message;
     private Text myText;
+    private bool crRunning;
 
     // Use this for initialization
     void Start()
@@ -42,14 +42,16 @@ public class DialogueScript : MonoBehaviour {
     // Function to enter text gradually, rather than instantly
     IEnumerator TypeText()
     {
+        crRunning = true;
         foreach (char letter in message.ToCharArray())
         {
+            //crRunning = true;
             myText.text += letter;
-            if (sound)
-                GetComponent<AudioSource>().PlayOneShot(sound);
             yield return 0;
             yield return new WaitForSeconds(letterPause);
+            //crRunning = false;
         }
+        crRunning = false;
     }
 
     public void SkipDialogue()
@@ -64,7 +66,13 @@ public class DialogueScript : MonoBehaviour {
         switch (scene)
         {
             case "MasterMason":
-                if (dialogueCount <= 2)
+                if (crRunning)
+                {
+                    StopAllCoroutines();
+                    myText.text = message;
+                    crRunning = false;
+                }
+                else if (dialogueCount <= 2)
                 {
                     myText.text = "";
                     message = messages[dialogueCount];
