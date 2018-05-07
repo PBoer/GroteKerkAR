@@ -1568,7 +1568,6 @@ GameObject:
   - component: {fileID: 844198650}
   - component: {fileID: 844198649}
   - component: {fileID: 844198648}
-  - component: {fileID: 844198651}
   m_Layer: 5
   m_Name: Dialogue
   m_TagString: Untagged
@@ -1648,17 +1647,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 844198646}
---- !u!114 &844198651
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 844198646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7e319c70b6a9fa4ea51fdfa17d73353, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &899669580
 GameObject:
   m_ObjectHideFlags: 0
