@@ -56,7 +56,14 @@ public class DialogueScript : MonoBehaviour {
 
     public void SkipDialogue()
     {
-        dialogueCanvas.SetActive(false);
+        if(dialogueCount == 3)
+        {
+            GameManager.Instance.ChangeScene("MainGame");
+        }
+        else
+        {
+            dialogueCanvas.SetActive(false);
+        }
     }
 
     public void ForwardDialogue()
@@ -66,28 +73,44 @@ public class DialogueScript : MonoBehaviour {
         switch (scene)
         {
             case "MasterMason":
-                if (crRunning)
+                if(dialogueCount == 3)
                 {
-                    StopAllCoroutines();
-                    myText.text = message;
-                    crRunning = false;
-                }
-                else if (dialogueCount <= 2)
-                {
-                    myText.text = "";
-                    message = messages[dialogueCount];
-                    dialogueCount++;
-                    StopAllCoroutines();
-                    StartCoroutine(TypeText());
+                    GameManager.Instance.ChangeScene("MainGame");
                 }
                 else
                 {
-                    string inttoset = "MasterMasonInstructions";
-                    PlayerPrefs.SetInt(inttoset, 1);
-                    SkipDialogue();
+                    if (crRunning)
+                    {
+                        StopAllCoroutines();
+                        myText.text = message;
+                        crRunning = false;
+                    }
+                    else if (dialogueCount <= 2)
+                    {
+                        myText.text = "";
+                        message = messages[dialogueCount];
+                        dialogueCount++;
+                        StopAllCoroutines();
+                        StartCoroutine(TypeText());
+                    }
+                    else
+                    {
+                        string inttoset = "MasterMasonInstructions";
+                        PlayerPrefs.SetInt(inttoset, 1);
+                        SkipDialogue();
+                    }
                 }
                 break;
         }
+    }
+
+    public void FinishGame()
+    {
+        dialogueCanvas.SetActive(true);
+        myText.text = "";
+        dialogueCount = 3;
+        message = messages[dialogueCount];
+        StartCoroutine(TypeText());
     }
 
     // Create array with dialogue messages
@@ -96,10 +119,10 @@ public class DialogueScript : MonoBehaviour {
     {
         messages = new List<string>
         {
-            "Test 1 hallo ik ben Heinrich",
-            "Test 2",
-            "Test 3",
-            "Gefeliciteerd!"
+            "Hallo, ik ben Heinrich de bouwmeester.",
+            "Ik heb je hulp nodig om deze kerk te bouwen! Richt je camera op het plaatje.",
+            "Dan zie je iets wat je na moet bouwen door blokken op de juiste plek te dragen.",
+            "Het is je gelukt, dank je wel!"
         };
     }
 }
