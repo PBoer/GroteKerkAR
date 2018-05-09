@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 
+    private float myX;
+    private float myY;
     private Collider myCollider;
 	// Use this for initialization
 	void Start () {
@@ -24,6 +26,7 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         newCube.transform.position = gameObject.transform.position;
         newCube.transform.rotation = gameObject.transform.rotation;
         newCube.transform.localScale = gameObject.transform.localScale;
+        newCube.name = transform.name;
     }
 
     /*
@@ -50,13 +53,21 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
 
         if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
         {
-            myCollider.enabled = false;
-            transform.parent = hit.transform.parent;
-            transform.localScale = hit.transform.localScale;
-            Destroy(hit.transform.gameObject);
-            transform.position = hit.transform.position;
-            transform.rotation = hit.transform.rotation;
-            GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
+            Debug.Log(Quaternion.Angle(transform.rotation, hit.transform.rotation));
+            if(Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 60)
+            {
+                myCollider.enabled = false;
+                transform.parent = hit.transform.parent;
+                transform.localScale = hit.transform.localScale;
+                Destroy(hit.transform.gameObject);
+                transform.position = hit.transform.position;
+                transform.rotation = hit.transform.rotation;
+                GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         else
         {
