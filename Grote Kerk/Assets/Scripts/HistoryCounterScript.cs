@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HistoryCounterScript : MonoBehaviour {
 
     void OnEnable()
     {
+        UpdateHistoryCounter();
         ProgressManager.OnHistoryUpdate += UpdateHistoryCounter;
     }
 
@@ -18,10 +20,12 @@ public class HistoryCounterScript : MonoBehaviour {
 
     void UpdateHistoryCounter()
     {
-        //int MiniGamesDone = PlayerPrefs.GetInt("MasterMasonCompleted")
-        //    + PlayerPrefs.GetInt("StoneCutterCompleted")
-        //    + PlayerPrefs.GetInt("GlassWorkerCompleted")
-        //    + PlayerPrefs.GetInt("CarpenterCompleted");
-        //gameObject.GetComponent<Text>().text = MiniGamesDone.ToString() + "/" + ProgressManager.AmountOfMiniGames.ToString();
+        int historyDone = 0;
+        int amountOfHistoryPoints = ProgressManager.AmountOfHistoryPoints;
+        for (int i = 0; amountOfHistoryPoints <= i ;i++)
+        {
+            historyDone = PlayerPrefs.GetInt("HistoryPoint"+ i);
+        }
+        gameObject.GetComponent<Text>().text = historyDone + "/" + amountOfHistoryPoints;
     }
 }

@@ -7,6 +7,7 @@ public class MinigameCounterScript : MonoBehaviour {
 
     void OnEnable()
     {
+        UpdateMiniGameCounter();
         ProgressManager.OnMiniGameUpdate += UpdateMiniGameCounter;
     }
 
