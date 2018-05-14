@@ -17,8 +17,8 @@ public class TimelineFunctions : MonoBehaviour {
 
     void Unfold()
     {
-       GameObject HistoryText = gameObject.GetComponentInParent<Text>();
-        HistoryText.Height;
+       //GameObject HistoryText = gameObject.GetComponentInParent<Text>();
+        //HistoryText.Height;
 
     }
 }
