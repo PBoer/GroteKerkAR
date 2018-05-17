@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueScript : MonoBehaviour {
 
-    public float letterPause = 0.2f;
+    public float letterPause = 0.1f;
 
     private string scene;
     private GameObject dialogueCanvas;
@@ -22,7 +22,18 @@ public class DialogueScript : MonoBehaviour {
         // Find out current scene and generate dialogue text
         scene = GameManager.Instance.GetCurrentScene();
         dialogueCanvas = GameObject.Find("DialogueCanvas");
-        dialogueCount = 0;
+
+        switch (scene)
+        {
+            case "MasterMason":
+                dialogueCount = 0;
+                break;
+
+            case "Carpenter":
+                dialogueCount = 6;
+                break;
+        }
+
         CreateDialogue();
         myText = GetComponent<Text>();
         myText.text = "";
@@ -75,42 +86,63 @@ public class DialogueScript : MonoBehaviour {
         {
             case "MasterMason":
 
-                if (crRunning)
-                {
-                    StopAllCoroutines();
-                    myText.text = message;
-                    crRunning = false;
-                }
-                else if (gameFinished)
-                {
-                    GameManager.Instance.ChangeScene("MainGame");
-                }
-                else if (dialogueCount <= 4)
-                {
-                    myText.text = "";
-                    message = messages[dialogueCount];
-                    dialogueCount++;
-                    StopAllCoroutines();
-                    StartCoroutine(TypeText());
-                }
-                else
-                {
-                    string inttoset = "MasterMasonInstructions";
-                    PlayerPrefs.SetInt(inttoset, 1);
-                    SkipDialogue();
-                }
+                ForwardText(4, "MasterMasonInstructions");
+                break;
+
+            case "Carpenter":
+
+                ForwardText(7, "CarpenterInstructions");
                 break;
         }
     }
 
     public void FinishGame()
     {
+        switch (scene)
+        {
+            case "MasterMason":
+                dialogueCount = 5;
+                PlayerPrefs.SetInt("MasterMasonCompleted", 1);
+                break;
+
+            case "Carpenter":
+                dialogueCount = 8;
+                PlayerPrefs.SetInt("CarpenterCompleted", 1);
+                break;
+        }
+
         gameFinished = true;
         dialogueCanvas.SetActive(true);
         myText.text = "";
-        dialogueCount = 5;
         message = messages[dialogueCount];
         StartCoroutine(TypeText());
+    }
+
+    private void ForwardText(int dialogueEnd, string instructionsName)
+    {
+        if (crRunning)
+        {
+            StopAllCoroutines();
+            myText.text = message;
+            crRunning = false;
+        }
+        else if (gameFinished)
+        {
+            GameManager.Instance.ChangeScene("MainGame");
+        }
+        else if (dialogueCount <= dialogueEnd)
+        {
+            myText.text = "";
+            message = messages[dialogueCount];
+            dialogueCount++;
+            StopAllCoroutines();
+            StartCoroutine(TypeText());
+        }
+        else
+        {
+            PlayerPrefs.SetInt(instructionsName, 1);
+            SkipDialogue();
+        }
     }
 
     // Create array with dialogue messages
@@ -119,12 +151,17 @@ public class DialogueScript : MonoBehaviour {
     {
         messages = new List<string>
         {
+            // Master mason dialogue (0-5)
             "Hoi, fijn dat jij er bent. Ik hoorde dat je op zoek was naar een raar stuk metaal. Die mag je ook hebben, maar eerst zou ik het waarderen als jij mij helpt met bouwen van de kerk.",
             "Ik ben bouwmeester Heinrich. Als bouwmeester mocht ik de kerk ontwerpen en de plannen maken voor het bouwen. Ik was niet altijd een bouwmeester. Mijn eerste vak was steenhouwen. Dat is vormen uit een stuk steen hakken.",
             "Toen werd ik een van de beste steenhouwers en mocht ik de leerling worden van een bouwmeester. Die heeft mij geleerd hoe ik plannen moest maken en hoe ik het plan moest uitvoeren om een kerk te bouwen.",
             "Vandaag ben ik bezig met het maken van een kruisribgewelf. Moeilijk woord, he? Kijk naar boven in de kerk, daar kun je een kruisribgewelf zien. Je kan zien hoe de stenen ribben een kruising maken.",
             "Ben je klaar om mij te helpen?",
-            "Hoe fantastisch! Dat kruisribgewelf ziet er perfect uit. Bedankt voor je hulp."
+            "Hoe fantastisch! Dat kruisribgewelf ziet er perfect uit. Bedankt voor je hulp.",
+            // Carpenter dialogue (6-8)
+            "Hallo. Ik ben timmervrouw Philipa. Jij bent degene die op zoek is naar een raar stuk zwaar metaal, toch? Ik heb nooit zoiets gezien hoor! Ik ben wel nieuwsgierig naar wat het is, maar je mag hem zeker terug hebben.",
+            "Zou je iets voor mij eerst kunnen doen? Wij zijn bezig met het bouwen van de toren, maar onze tredmolen is kapot gegaan.",
+            "Geweldig! Je hebt de tredmolen gemaakt. Dank je wel!"
         };
     }
 }

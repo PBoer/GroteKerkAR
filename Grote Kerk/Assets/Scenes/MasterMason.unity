@@ -1115,15 +1115,15 @@ MonoBehaviour:
   m_Script: {fileID: -1631628248, guid: bab6fa851cf5a1a4bba3cec5f191cb8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mTrackableName: CodeTest
+  mTrackableName: MasterMason
   mPreserveChildSize: 0
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/GroteKerk.xml
   mExtendedTracking: 0
-  mAspectRatio: 1
+  mAspectRatio: 1.4140291
   mImageTargetType: 0
-  mWidth: 1000
-  mHeight: 1000
+  mWidth: 1060.7985
+  mHeight: 1500
 --- !u!4 &557921327
 Transform:
   m_ObjectHideFlags: 0
@@ -1131,8 +1131,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 557921321}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -2381}
-  m_LocalScale: {x: 1000, y: 1000, z: 1000}
+  m_LocalPosition: {x: 0, y: 0, z: -2184}
+  m_LocalScale: {x: 1500, y: 1500, z: 1500}
   m_Children:
   - {fileID: 1840460375}
   - {fileID: 36543267}
@@ -1277,9 +1277,9 @@ RectTransform:
   m_Father: {fileID: 1640825416}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.5}
-  m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 60.100006, y: -53.164}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 60.100006, y: 154.836}
   m_SizeDelta: {x: 120.3, y: 106.33}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &595392035
@@ -3152,7 +3152,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: CodeTestMaterial
+  m_Name: MasterMasonMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -3165,7 +3165,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 2f4af8bf820349d1a4f34bdbf6fa4b30, type: 3}
+        m_Texture: {fileID: 2800000, guid: c6e72c446c5546e3a1960fd295197deb, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -3483,7 +3483,7 @@ Mesh:
     vertexCount: 4
     localAABB:
       m_Center: {x: 0, y: 0, z: 0}
-      m_Extent: {x: 0.5, y: 0, z: 0.5}
+      m_Extent: {x: 0.35359952, y: 0, z: 0.5}
   m_Shapes:
     vertices: []
     shapes: []
@@ -3536,7 +3536,7 @@ Mesh:
       format: 0
       dimension: 0
     m_DataSize: 128
-    _typelessdata: 000000bf00000000000000bf000000000000803f000000000000000000000000000000bf000000000000003f000000000000803f00000000000000000000803f0000003f00000000000000bf000000000000803f000000000000803f000000000000003f000000000000003f000000000000803f000000000000803f0000803f
+    _typelessdata: ff0ab5be00000000000000bf000000000000803f000000000000000000000000ff0ab5be000000000000003f000000000000803f00000000000000000000803fff0ab53e00000000000000bf000000000000803f000000000000803f00000000ff0ab53e000000000000003f000000000000803f000000000000803f0000803f
   m_CompressedMesh:
     m_Vertices:
       m_NumItems: 0
@@ -3725,7 +3725,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: def5da9c7b90d9640aec790d521d330c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
