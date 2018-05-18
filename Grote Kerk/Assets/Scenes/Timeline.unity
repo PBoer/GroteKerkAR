@@ -189,7 +189,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 55120182}
-        m_MethodName: Unfold
+        m_MethodName: moreInfo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -261,7 +261,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98b0b212e8d6c7d4e84ea635c7e32248, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Content: {fileID: 303539980}
+  moreInfoPanel: {fileID: 1765304779}
+  moreInfoText: {fileID: 1610608737}
+  mainPanel: {fileID: 303539980}
+  Assets:
+  - {fileID: 4900000, guid: ebf414c86fe5d7e46abbfaf558d093dd, type: 3}
+  - {fileID: 4900000, guid: 98cee017e20a6824888dc5266814350b, type: 3}
+  - {fileID: 4900000, guid: 195dead1a3225584a8c20846fdfe303a, type: 3}
 --- !u!4 &55120183
 Transform:
   m_ObjectHideFlags: 0
@@ -857,7 +863,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000037213642, y: -0.000001569531}
+  m_AnchoredPosition: {x: -0.000050664406, y: -0.000001569531}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &303539982
@@ -905,7 +911,6 @@ GameObject:
   - component: {fileID: 324504321}
   - component: {fileID: 324504323}
   - component: {fileID: 324504322}
-  - component: {fileID: 324504324}
   m_Layer: 5
   m_Name: HistoryText
   m_TagString: Untagged
@@ -970,18 +975,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 324504320}
---- !u!114 &324504324
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 324504320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8f3adfc63e00a4f93df37287bfec64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asset: {fileID: 4900000, guid: 98cee017e20a6824888dc5266814350b, type: 3}
 --- !u!1 &434236988
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,8 +1510,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 55120182}
-        m_MethodName: Unfold
-        m_Mode: 3
+        m_MethodName: lessInfo
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2269,14 +2262,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Integer ut risus eget odio molestie ultricies. Etiam tincidunt auctor maximus.
-    In laoreet eget turpis ut interdum. Quisque vel tortor est. Cras ornare, erat
-    ut porta imperdiet, felis lectus lobortis ex, et condimentum arcu nisl at urna.
-    Proin non nulla nec lectus auctor hendrerit. Duis ac nibh vehicula, elementum
-    ante a, dignissim augue. In erat ante, porttitor at urna ac, cursus consequat
-    nisi. Donec feugiat orci sit amet auctor dapibus. Nam laoreet dictum lacus sit
-    amet molestie. Proin varius, tellus a imperdiet porta, sem tortor iaculis dui,
-    in vehicula tellus neque ac justo. Vivamus id molestie nibh. \n"
+  m_Text: 
 --- !u!222 &1610608740
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2359,12 +2345,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 55120182}
-        m_MethodName: Unfold
+        m_MethodName: moreInfo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: gameObject.name
           m_BoolArgument: 0
@@ -2480,12 +2466,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 55120182}
-        m_MethodName: Unfold
+        m_MethodName: moreInfo
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: gameObject.name
           m_BoolArgument: 0
@@ -2871,7 +2857,6 @@ GameObject:
   - component: {fileID: 2010056852}
   - component: {fileID: 2010056855}
   - component: {fileID: 2010056854}
-  - component: {fileID: 2010056853}
   m_Layer: 5
   m_Name: HistoryText
   m_TagString: Untagged
@@ -2897,18 +2882,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 737.5967, y: 90}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2010056853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2010056851}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8f3adfc63e00a4f93df37287bfec64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asset: {fileID: 4900000, guid: ebf414c86fe5d7e46abbfaf558d093dd, type: 3}
 --- !u!114 &2010056854
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3020,7 +2993,6 @@ GameObject:
   - component: {fileID: 2137763845}
   - component: {fileID: 2137763847}
   - component: {fileID: 2137763846}
-  - component: {fileID: 2137763848}
   m_Layer: 5
   m_Name: HistoryText
   m_TagString: Untagged
@@ -3078,29 +3050,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Integer ut risus eget odio molestie ultricies. Etiam tincidunt auctor maximus.
-    In laoreet eget turpis ut interdum. Quisque vel tortor est. Cras ornare, erat
-    ut porta imperdiet, felis lectus lobortis ex, et condimentum arcu nisl at urna.
-    Proin non nulla nec lectus auctor hendrerit. Duis ac nibh vehicula, elementum
-    ante a, dignissim augue. In erat ante, porttitor at urna ac, cursus consequat
-    nisi. Donec feugiat orci sit amet auctor dapibus. Nam laoreet dictum lacus sit
-    amet molestie. Proin varius, tellus a imperdiet porta, sem tortor iaculis dui,
-    in vehicula tellus neque ac justo. Vivamus id molestie nibh. '
+  m_Text: 
 --- !u!222 &2137763847
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2137763844}
---- !u!114 &2137763848
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2137763844}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e8f3adfc63e00a4f93df37287bfec64, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  asset: {fileID: 4900000, guid: 195dead1a3225584a8c20846fdfe303a, type: 3}
