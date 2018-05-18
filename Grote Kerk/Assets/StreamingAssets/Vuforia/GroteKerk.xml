@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
-    <ImageTarget name="CodeTest" size="10.000000 10.000000" />
-    <ImageTarget name="Zwolle_Wapen" size="7.000000 9.333333" />
-    <ImageTarget name="Trap_Consistorie" size="10.000000 13.333333" />
-    <ImageTarget name="Orgel_resized" size="7.000000 9.333333" />
-    <ImageTarget name="Klokje" size="5.000000 6.666667" />
-    <ImageTarget name="Glas_in_lood" size="10.000000 13.333333" />
+    <ImageTarget name="MasterMason" size="10.000000 14.140291" />
   </Tracking>
 </QCARConfig>

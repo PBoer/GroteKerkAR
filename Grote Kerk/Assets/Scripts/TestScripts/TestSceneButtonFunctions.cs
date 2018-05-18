@@ -23,4 +23,9 @@ public class TestSceneButtonFunctions : MonoBehaviour {
     {
         GameManager.Instance.ChangeScene("MasterMason");
     }
+
+    public void CarpenterGame()
+    {
+        GameManager.Instance.ChangeScene("Carpenter");
+    }
 }
