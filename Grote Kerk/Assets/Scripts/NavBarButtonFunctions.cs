@@ -51,7 +51,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
 
     public void Timeline()
     {
-        Debug.Log("TODO go to timeline screen");
+        if (GameManager.Instance.GetCurrentScene() == "Timeline")
+        {
+            Debug.Log("Already in test scene");
+        }
+        else
+        {
+            GameManager.Instance.ChangeScene("Timeline");
+        }
     }
 
     public void Role()
