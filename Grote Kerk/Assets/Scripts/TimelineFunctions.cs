@@ -1,24 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TimelineFunctions : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-    void Unfold()
+    public GameObject Content;
+    public void moreInfo(int historyPointID)
     {
-       GameObject HistoryText = gameObject.GetComponentInParent<Text>();
-        HistoryText.Height;
+           
+        
 
     }
 }
