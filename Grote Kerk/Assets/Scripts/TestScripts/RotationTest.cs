@@ -12,7 +12,8 @@ public class RotationTest : MonoBehaviour {
     {
         if (Input.GetMouseButton(0))
         {
-            RaycastHit hit; Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
+            RaycastHit hit;
+            Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
             if(hit.transform.name == "Sphere")
             {
                 if (!hasGrabbedPoint)
@@ -37,7 +38,8 @@ public class RotationTest : MonoBehaviour {
 
     Vector3 getTouchedPoint()
     {
-        RaycastHit hit; Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
+        RaycastHit hit;
+        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
 
 
         return transform.InverseTransformPoint(hit.point);

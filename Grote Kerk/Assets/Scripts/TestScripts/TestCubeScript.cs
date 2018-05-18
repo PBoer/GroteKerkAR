@@ -62,6 +62,7 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
                 Destroy(hit.transform.gameObject);
                 transform.position = hit.transform.position;
                 transform.rotation = hit.transform.rotation;
+                transform.tag = "Untagged";
                 GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
             }
             else
