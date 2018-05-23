@@ -2,5 +2,6 @@
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
     <ImageTarget name="MasterMason" size="10.000000 14.140291" />
+    <ImageTarget name="CodeTest" size="10.000000 10.000000" />
   </Tracking>
 </QCARConfig>

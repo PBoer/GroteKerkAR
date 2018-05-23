@@ -1427,6 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   letterPause: 0.05
+  Imagery: []
 --- !u!114 &930106070
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class CarpenterScavenge : MonoBehaviour {
 
+    private int partsFound;
+    private GameObject gameUI;
+
     // Use this for initialization
     void Start()
     {
-
+        partsFound = 0;
+        gameUI = GameObject.Find("GameUICanvas");
+        gameUI.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,6 +27,12 @@ public class CarpenterScavenge : MonoBehaviour {
                 if(hit.transform.tag == "Treadmill")
                 {
                     Destroy(hit.transform.gameObject);
+                    partsFound++;
+
+                    if(partsFound == 3)
+                    {
+                        gameUI.SetActive(true);
+                    }
                 }
             }
         }
