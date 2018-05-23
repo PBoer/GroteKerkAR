@@ -16,7 +16,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
 
     public void Story()
     {
-        Debug.Log("TODO go to story screen");
+        if (GameManager.Instance.GetCurrentScene() == "Story")
+        {
+            Debug.Log("Already in test scene");
+        }
+        else
+        {
+            GameManager.Instance.ChangeScene("Story");
+        }
     }
 
     public void Scanner()
