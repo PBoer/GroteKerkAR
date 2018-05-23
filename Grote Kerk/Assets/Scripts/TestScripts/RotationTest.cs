@@ -12,21 +12,24 @@ public class RotationTest : MonoBehaviour {
     {
         if (Input.GetMouseButton(0))
         {
-            RaycastHit hit; Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
-            if(hit.transform.name == "Sphere")
-            {
-                if (!hasGrabbedPoint)
+            RaycastHit hit;
+            if(Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit)) {
+
+                if (hit.transform.name == "Sphere")
                 {
-                    hasGrabbedPoint = true;
-                    grabbedPoint = getTouchedPoint();
-                    materials = GameObject.FindGameObjectsWithTag("Material");
-                }
-                else
-                {
-                    Vector3 targetPoint = getTouchedPoint(); Quaternion rot = Quaternion.FromToRotation(grabbedPoint, targetPoint); transform.localRotation *= rot;
-                    foreach (GameObject material in materials)
+                    if (!hasGrabbedPoint)
                     {
-                        material.transform.rotation = transform.rotation;
+                        hasGrabbedPoint = true;
+                        grabbedPoint = getTouchedPoint();
+                        materials = GameObject.FindGameObjectsWithTag("Material");
+                    }
+                    else
+                    {
+                        Vector3 targetPoint = getTouchedPoint(); Quaternion rot = Quaternion.FromToRotation(grabbedPoint, targetPoint); transform.localRotation *= rot;
+                        foreach (GameObject material in materials)
+                        {
+                            material.transform.rotation = transform.rotation;
+                        }
                     }
                 }
             }
@@ -37,7 +40,8 @@ public class RotationTest : MonoBehaviour {
 
     Vector3 getTouchedPoint()
     {
-        RaycastHit hit; Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
+        RaycastHit hit;
+        Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hit);
 
 
         return transform.InverseTransformPoint(hit.point);
