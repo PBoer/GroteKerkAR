@@ -503,10 +503,9 @@ GameObject:
   - component: {fileID: 447767034}
   - component: {fileID: 447767036}
   - component: {fileID: 447767035}
-  - component: {fileID: 447767037}
   m_Layer: 5
   m_Name: MinigameCounter
-  m_TagString: Untagged
+  m_TagString: MinigameCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -568,17 +567,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 447767033}
---- !u!114 &447767037
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 447767033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f1ffe06b0bcb1934aa0fa1c251d28136, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &480365782
 GameObject:
   m_ObjectHideFlags: 0
@@ -1452,10 +1440,9 @@ GameObject:
   - component: {fileID: 1133179923}
   - component: {fileID: 1133179925}
   - component: {fileID: 1133179924}
-  - component: {fileID: 1133179926}
   m_Layer: 5
   m_Name: HistoryCounter
-  m_TagString: Untagged
+  m_TagString: HistoryCounter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1517,17 +1504,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1133179922}
---- !u!114 &1133179926
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1133179922}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a2ff460b298a8564eb99501bb29b0231, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1547268167
 GameObject:
   m_ObjectHideFlags: 0
@@ -1883,6 +1859,7 @@ GameObject:
   - component: {fileID: 1839206192}
   - component: {fileID: 1839206193}
   - component: {fileID: 1839206194}
+  - component: {fileID: 1839206195}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -1937,6 +1914,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioMixer: {fileID: 24100000, guid: 67d3e4b5ad28091458d490c62a5a1d8f, type: 2}
+--- !u!114 &1839206195
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1839206190}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d686714d088fa740b9cf37c9021428c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1992680518
 GameObject:
   m_ObjectHideFlags: 0

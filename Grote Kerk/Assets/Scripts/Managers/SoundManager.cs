@@ -5,7 +5,6 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour {
 
-    public static AudioClip testSound;
     public static SoundManager Instance { get; private set; }
     public AudioMixer audioMixer;
 
