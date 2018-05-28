@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Material
   - Treadmill
+  - MinigameCounter
+  - HistoryCounter
   layers:
   - Default
   - TransparentFX

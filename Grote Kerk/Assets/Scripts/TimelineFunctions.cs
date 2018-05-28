@@ -15,14 +15,13 @@ public class TimelineFunctions : MonoBehaviour {
     {
         int count = 1;
         foreach (TextAsset asset in Assets)
-        {
-            //TODO uncomment with 
-            //if(PlayerPrefs.GetInt("HistoryPoint"+ count) == 1){
-            mainPanel.transform.Find("HistoryPoint" + count).Find("HistoryText").GetComponent<Text>().text = asset.text;
-            //}
-            //else{
-            //mainPanel.transform.Find("HistoryPoint" + count).Find("HistoryText").GetComponent<Text>().text = "Scan het geschiedenispunt om dit vrij te spelen";
-            //}
+        { 
+            if(PlayerPrefs.GetInt("HistoryPoint"+ count) == 1){
+                mainPanel.transform.Find("HistoryPoint" + count).Find("HistoryText").GetComponent<Text>().text = asset.text;
+            }
+            else{
+                mainPanel.transform.Find("HistoryPoint" + count).Find("HistoryText").GetComponent<Text>().text = "Scan het geschiedenispunt om dit vrij te spelen";
+            }
             count++;
         }
 

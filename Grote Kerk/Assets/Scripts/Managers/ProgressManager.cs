@@ -1,43 +1,46 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProgressManager : MonoBehaviour {
 
-    public delegate void ProgressHistory();
-    public static event ProgressHistory OnHistoryUpdate;
+    public static ProgressManager Instance { get; private set; }
 
-    public delegate void ProgressMiniGame();
-    public static event ProgressMiniGame OnMiniGameUpdate;
 
     public const int AmountOfMiniGames = 4;
     public const int AmountOfHistoryPoints = 14;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    //public GameObject TimePieceCounter;
+    //public GameObject MiniGameCounter;
 
-    public void OnHistoryPointScan()
+    private void OnEnable()
     {
-        if (OnHistoryUpdate != null)
-        {
-            OnHistoryUpdate();
-        }
-            
+        UpdateTimePieceCounter();
+        UpdateMiniGameCounter();
     }
 
-    public void OnMiniGamePointScan()
+    public static void UpdateTimePieceCounter()
     {
-        if (OnMiniGameUpdate != null)
+        int historyDone = 0;
+        for (int i = 1; i <= AmountOfHistoryPoints; i++)
         {
-            OnMiniGameUpdate();
+            historyDone += PlayerPrefs.GetInt("HistoryPoint" + i);
+            Debug.Log(historyDone + "/" + "HistoryPoint" + i);
         }
+        
+        GameObject obj = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.CompareTag("HistoryCounter"));
+        obj.GetComponent<Text>().text = historyDone + "/" + AmountOfHistoryPoints;
+    }
 
+    public static void UpdateMiniGameCounter()
+    {
+        int MiniGamesDone = PlayerPrefs.GetInt("MasterMasonCompleted")
+            + PlayerPrefs.GetInt("StoneCutterCompleted")
+            + PlayerPrefs.GetInt("GlassWorkerCompleted")
+            + PlayerPrefs.GetInt("CarpenterCompleted");
+        GameObject obj = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.CompareTag("MinigameCounter"));
+        obj.GetComponent<Text>().text = MiniGamesDone + "/" + AmountOfMiniGames;
     }
 }
