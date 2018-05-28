@@ -54,17 +54,28 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
         {
             Debug.Log(Quaternion.Angle(transform.rotation, hit.transform.rotation));
-            if(Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 60)
+
+            if(hit.transform.name == gameObject.name)
             {
-                myCollider.enabled = false;
-                transform.parent = hit.transform.parent;
-                transform.localScale = hit.transform.localScale;
-                Destroy(hit.transform.gameObject);
-                transform.position = hit.transform.position;
-                transform.rotation = hit.transform.rotation;
-                transform.tag = "Untagged";
-                GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
+                if (gameObject.name == "Arch")
+                {
+                    if (Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 75)
+                    {
+                        PlaceObject(hit);
+                    } else
+                    {
+                        Destroy(gameObject);
+                    }
+                }
+                else
+                {
+                    PlaceObject(hit);
+                }
             }
+            //if(Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 60 || gameObject.name == "Base")
+            //{
+            //    PlaceObject(hit);
+            //}
             else
             {
                 Destroy(gameObject);
@@ -74,5 +85,17 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         {
             Destroy(gameObject);
         }
+    }
+
+    private void PlaceObject(RaycastHit hit)
+    {
+        myCollider.enabled = false;
+        transform.parent = hit.transform.parent;
+        transform.localScale = hit.transform.localScale;
+        Destroy(hit.transform.gameObject);
+        transform.position = hit.transform.position;
+        transform.rotation = hit.transform.rotation;
+        transform.tag = "Untagged";
+        GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
     }
 }
