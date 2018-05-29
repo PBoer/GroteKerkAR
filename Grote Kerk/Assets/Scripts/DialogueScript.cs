@@ -110,7 +110,7 @@ public class DialogueScript : MonoBehaviour {
                 {
                     ChangeImagery();
                 }
-                ForwardText(28, "StorySeen");
+                ForwardText(29, "StorySeen");
                 break;
         }
     }
@@ -182,32 +182,33 @@ public class DialogueScript : MonoBehaviour {
             "Hallo. Ik ben timmervrouw Philipa. Jij bent degene die op zoek is naar een raar stuk zwaar metaal, toch? Ik heb nooit zoiets gezien hoor! Ik ben wel nieuwsgierig naar wat het is, maar je mag hem zeker terug hebben.",
             "Zou je iets voor mij eerst kunnen doen? Wij zijn bezig met het bouwen van de toren, maar onze tredmolen is kapot gegaan.",
             "Geweldig! Je hebt de tredmolen gemaakt. Dank je wel!",
-            // Game Introduction (9-28)
-            "Hoi! Ik ben Bert Dijkink. Ik ben een stadshistoricus. Historicus betekent dat ik iemand ben die het geschiedenis onderzoekt.",
+            // Game Introduction (9-29)
+            "Hoi! Ik ben Bert Dijkink de stadshistoricus. Ik ben iemand die veel afweet van de geschiedenis van Zwolle.",
             // panel 2
-            "Ik ga je over een schat vertellen die je onder de Grote Kerk kan vinden.",
+            "Ik wil je over een schat vertellen die je onder de Grote Kerk kan vinden.",
             // panel 3
-            "Achter de koorhek is er een grafsteen die de ingang is naar een crypte. In die crypte kun je allemaal onderdelen van de oude romaanse kerk vinden die eerst hier stond. De Grote Kerk is om die kleine kerk gebouwd.",
-            "In de crypte vind je een deurtje. Als je door de deurtje gaat vind je de schat van Zwolle!",
+            "Achter het koorhek ligt er een grafsteen die de ingang is naar een crypte. In die crypte kun je allemaal onderdelen van de oude romaanse kerk vinden die hier eerst stond.",
+            "In die crypte vind je een deurtje. Als je door dat deurtje gaat vind je de schat van Zwolle!",
             // panel 4
-            "Oh wow, er is echt een deur! Maar wat is dat blauw licht?",
+            "Speler: Oh wauw, er is echt een deur! Maar wat is dat blauwe licht?",
             // panel 5
-            "Woah! Wat is dat? Ziet eruit als een raar machine. Waar is de schat? Is het misschien in die machine?",
+            "Speler: Wat is dat? Ziet eruit als een rare machine. Waar is de schat? Ligt die misschien in het machine?",
             // panel 6
-            "Huh?",
-            "Hoi! Zou je ik en mijn zus kunnen helpen?",
-            "Uhh… ja? Wie zijn jullie? Waar zijn jullie?",
-            "Ik ben Henk…",
-            "...En ik ben Karlijn.",
-            "Wij zitten vast in de middeleeuwen!",
-            "Hoe is dat mogelijk? Ik dacht dat er een schat was.",
-            "Dit is het schat! Het schat is een tijdmachine die je kan gebruiken om de geschiedenis van Zwolle mee te maken. Mijn zus en ik hebben het gebruikt, maar helaas is onze control panel kapot gegaan.",
-            "Zie je die lege plek op de tafel? Daar stond de control panel, maar die is in 4 stukken kapot gegaan toen wij terug naar de middeleeuwen ging om het bouw van de Grote Kerk mee te maken.",
-            "Hoe kan ik helpen?",
-            "Vier vakmannen hebben elk een stuk van de control panel. Neem de walkie talkie mee. Het is speciaal. Met behulp van de walkie talkie kun je met je apparaat terug in de middeleeuwen kijken en met de vakmannen praten.",
-            "En dan moet je geschiedenispunten scannen! Zo krijgen wij de jaartallen van de belangrijke momenten in de geschiedenis van Grote Kerk.",
-            "En vergeet niet de walkie talkie mee te nemen. Het is niet alleen om terug in de tijd te kijken, maar ook om in contact met ons te blijven. We kunnen jou af en toe helpen als het nodig is.",
-            "Goed!"
+            "Speler: Huh?",
+            "Walkie-talkie Henk: Hoi! Zou je ons kunnen helpen?",
+            "Speler: Uhh… ja? Wie zijn jullie? Waar zijn jullie?",
+            "WT Henk: Ik ben Henk…",
+            "WT Karlijn: ...En ik ben Karlijn.",
+            "WT Henk en Karlijn: Wij zitten vast in de middeleeuwen!",
+            "Speler: Hoe is dat mogelijk? Ik dacht dat er een schat was.",
+            "WT Henk: Dit is de schat! De schat is een tijdmachine! We hebben het gebruikt om terug in de tijd te gaan om de geschiedenis van Zwolle te beleven.",
+            "WT Henk: Wij hebben de tijdmachine gebruikt, maar helaas is onze controlepaneel kapotgegaan.",
+            "WT Karlijn: Zie je die lege plek op de rechter tafel? Daar stond het controlepaneel, maar die is in 4 stukken gebroken toen wij terug naar de middeleeuwen gingen om de bouw van de Grote Kerk te beleven.",
+            "Speler: Hoe kan ik helpen?",
+            "WT Henk: Vier ambachtslieden hebben elk een stuk van het controlepaneel. Vergeet niet de walkie talkie mee te nemen.",
+            "WT Henk: Hij is speciaal. Met behulp van de walkie talkie kan je terug in de middeleeuwen kijken en met de ambachtslieden praten.",
+            "WT Karlijn: En dan moet je tijdstukken nog scannen! Zo kunnen wij de belangrijke momenten in de geschiedenis van de Grote Kerk ervaren.",
+            "Speler: Super!",
             //
 
         };
