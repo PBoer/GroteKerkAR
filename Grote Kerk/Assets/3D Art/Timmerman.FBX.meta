@@ -851,6 +851,16 @@ ModelImporter:
       assembly: UnityEngine.CoreModule
       name: Material_003
     second: {fileID: 2100000, guid: 8758b2f8cd8bead4fa034b1e458a3ce4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Stainless_Steel
+    second: {fileID: 2100000, guid: 93d9e3479773e0845acd67b274035ef3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rope
+    second: {fileID: 2100000, guid: a52b607a2b624c549a1756db7599fb74, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
