@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueScript : MonoBehaviour {
 
-    public float letterPause = 0.1f;
+    private float letterPause = 0.03f;
     public List<GameObject> Imagery;
 
     private string scene;

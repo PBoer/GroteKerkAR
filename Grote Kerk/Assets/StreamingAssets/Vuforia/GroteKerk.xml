@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="T_Scavenger3" size="10.000000 10.000000" />
+    <ImageTarget name="T_Scavenger2" size="10.000000 10.000000" />
+    <ImageTarget name="T_Scavenger1" size="10.000000 10.000000" />
+    <ImageTarget name="Carpenter" size="10.000000 10.000000" />
+    <ImageTarget name="G14_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G13_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G12_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G11_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G10_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G9_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G8_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G7_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G6_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G5_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G4_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G3_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G2_ScanCode" size="10.000000 10.000000" />
+    <ImageTarget name="G1_ScanCode" size="10.000000 10.000000" />
     <ImageTarget name="MasterMason" size="10.000000 14.140291" />
     <ImageTarget name="CodeTest" size="10.000000 10.000000" />
   </Tracking>
