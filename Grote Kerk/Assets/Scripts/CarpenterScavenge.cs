@@ -32,6 +32,7 @@ public class CarpenterScavenge : MonoBehaviour {
                     if(partsFound == 3)
                     {
                         gameUI.SetActive(true);
+                        GameObject.Find("Progress").GetComponent<CarpenterProgress>().EndScavenge();
                     }
                 }
             }

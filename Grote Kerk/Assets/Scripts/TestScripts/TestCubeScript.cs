@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 
 public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 
-    private float myX;
-    private float myY;
+    private string scene;
     private Collider myCollider;
 	// Use this for initialization
 	void Start () {
         myCollider = GetComponent<Collider>();
+        scene = GameManager.Instance.GetCurrentScene();
 	}
 	
 	// Update is called once per frame
@@ -72,10 +72,6 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
                     PlaceObject(hit);
                 }
             }
-            //if(Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 60 || gameObject.name == "Base")
-            //{
-            //    PlaceObject(hit);
-            //}
             else
             {
                 Destroy(gameObject);
@@ -96,6 +92,17 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         transform.position = hit.transform.position;
         transform.rotation = hit.transform.rotation;
         transform.tag = "Untagged";
-        GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
+        gameObject.GetComponent<DragNDrop>().enabled = false;
+
+        switch (scene)
+        {
+            case "MasterMason":
+                GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
+                break;
+
+            case "Carpenter":
+                GameObject.Find("Progress").GetComponent<CarpenterProgress>().PlacedPart();
+                break;
+        }
     }
 }
