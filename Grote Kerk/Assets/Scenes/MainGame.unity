@@ -168,7 +168,7 @@ GameObject:
   - component: {fileID: 189170109}
   - component: {fileID: 189170108}
   m_Layer: 0
-  m_Name: Timepiece04
+  m_Name: Timepiece4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -337,12 +337,12 @@ GameObject:
   - component: {fileID: 334196870}
   - component: {fileID: 334196875}
   m_Layer: 0
-  m_Name: Timepiece08
+  m_Name: Timepiece8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &334196869
 Transform:
   m_ObjectHideFlags: 0
@@ -588,7 +588,7 @@ GameObject:
   - component: {fileID: 356760327}
   - component: {fileID: 356760326}
   m_Layer: 0
-  m_Name: Timepiece05
+  m_Name: Timepiece5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 784731064}
   - component: {fileID: 784731063}
   m_Layer: 0
-  m_Name: Timepiece09
+  m_Name: Timepiece9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1563,7 +1563,7 @@ GameObject:
   - component: {fileID: 827863456}
   - component: {fileID: 827863455}
   m_Layer: 0
-  m_Name: Timepiece02
+  m_Name: Timepiece2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1791,7 +1791,7 @@ GameObject:
   - component: {fileID: 969615148}
   - component: {fileID: 969615147}
   m_Layer: 0
-  m_Name: Timepiece01
+  m_Name: Timepiece1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1920,7 +1920,7 @@ GameObject:
   - component: {fileID: 1096855733}
   - component: {fileID: 1096855732}
   m_Layer: 0
-  m_Name: Timepiece07
+  m_Name: Timepiece7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2275,7 +2275,7 @@ GameObject:
   - component: {fileID: 1340560707}
   - component: {fileID: 1340560706}
   m_Layer: 0
-  m_Name: Timepiece03
+  m_Name: Timepiece3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2429,7 +2429,7 @@ GameObject:
   - component: {fileID: 1415926944}
   - component: {fileID: 1415926943}
   m_Layer: 0
-  m_Name: Timepiece06
+  m_Name: Timepiece6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2549,7 +2549,7 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: G14_ScanCodeMaterial
+  m_Name: G5_ScanCodeMaterial
   m_Shader: {fileID: 10752, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: 
   m_LightmapFlags: 5
@@ -2562,7 +2562,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6715cf67d6c7454397fd88924b62a914, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7c514c2597d6479f9d1b00aedb1e7819, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats: []
@@ -3035,7 +3035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1852843833
 Transform:
   m_ObjectHideFlags: 0
@@ -3280,7 +3280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2116123157
 Transform:
   m_ObjectHideFlags: 0

@@ -72,6 +72,8 @@ public class SettingsButtonFunctions : MonoBehaviour {
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetFloat("Music", MusicSlider.value);
         PlayerPrefs.SetFloat("Dialog", SpeechSlider.value);
+        ProgressManager.UpdateTimePieceCounter();
+        ProgressManager.UpdateMiniGameCounter();
         ResetPanel.SetActive(false);
     }
 }

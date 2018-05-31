@@ -26,8 +26,10 @@ public class ProgressManager : MonoBehaviour {
         int historyDone = 0;
         for (int i = 1; i <= AmountOfHistoryPoints; i++)
         {
-            historyDone += PlayerPrefs.GetInt("HistoryPoint" + i);
-            Debug.Log(historyDone + "/" + "HistoryPoint" + i);
+            if (PlayerPrefs.GetInt("HistoryPoint" + i) == 1)
+            {
+                historyDone++; 
+            }
         }
         
         GameObject obj = Resources.FindObjectsOfTypeAll<GameObject>().FirstOrDefault(g => g.CompareTag("HistoryCounter"));

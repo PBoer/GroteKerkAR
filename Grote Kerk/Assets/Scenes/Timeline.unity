@@ -791,7 +791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Orgelpijpen
+  m_Text: 'G1: Orgelpijpen'
 --- !u!222 &123335614
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1344,7 +1344,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Koorhek
+  m_Text: 'G8: Koorhek'
 --- !u!222 &256572418
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1846,7 +1846,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Beeldhouwwerk en Beeldenstorm
+  m_Text: 'G13: Beeldhouwwerk en Beeldenstorm'
 --- !u!222 &479126523
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2271,7 +2271,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Fresco
+  m_Text: 'G10: Fresco'
 --- !u!222 &682105546
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2448,7 +2448,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1029553099}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.17857099
+  m_Size: 0.19483617
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -3044,7 +3044,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Consistoriekamer
+  m_Text: 'G3: Consistoriekamer'
 --- !u!222 &851833272
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3118,7 +3118,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Leprozenkapel
+  m_Text: 'G11: Leprozenkapel'
 --- !u!222 &1013358346
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3408,7 +3408,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Grafsteen naar crypte
+  m_Text: 'G14: Grafsteen naar crypte'
 --- !u!222 &1085709383
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5290,7 +5290,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Spaarboog
+  m_Text: 'G4: Spaarboog'
 --- !u!222 &1641750415
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5774,7 +5774,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Grafstenen
+  m_Text: 'G7: Grafstenen'
 --- !u!222 &1739534494
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6016,7 +6016,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Kandelaars
+  m_Text: 'G6: Kandelaars'
 --- !u!222 &1856648356
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6090,7 +6090,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Orgel: Houtwerk'
+  m_Text: 'G2: Orgel: Houtwerk'
 --- !u!222 &1878436974
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6164,7 +6164,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Preekstoel
+  m_Text: 'G5: Preekstoel'
 --- !u!222 &1880328063
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6594,7 +6594,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Grafkapel
+  m_Text: 'G12: Grafkapel'
 --- !u!222 &1961030704
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6898,7 +6898,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Michaelsklokje
+  m_Text: 'G9: Michaelsklokje'
 --- !u!222 &2068239171
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -8,6 +8,8 @@ TagManager:
   - Treadmill
   - MinigameCounter
   - HistoryCounter
+  - TimePieceDone
+  - MiniGameDone
   layers:
   - Default
   - TransparentFX
