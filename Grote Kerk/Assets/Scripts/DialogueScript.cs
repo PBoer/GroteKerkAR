@@ -8,6 +8,7 @@ public class DialogueScript : MonoBehaviour {
     private float letterPause = 0.03f;
     public List<GameObject> Imagery;
 
+    private string instructionsName;
     private string scene;
     private GameObject dialogueCanvas;
     private int dialogueCount;
@@ -31,10 +32,10 @@ public class DialogueScript : MonoBehaviour {
                 break;
 
             case "Carpenter":
-                dialogueCount = 6;
+                dialogueCount = 7;
                 break;
             case "Story":
-                dialogueCount = 9;
+                dialogueCount = 16;
                 break;
 
         }
@@ -44,13 +45,17 @@ public class DialogueScript : MonoBehaviour {
         myText.text = "";
         // Check playerprefs to see if dialogue for this scene has played before
         // If it has, skip the dialogue, otherwise play the dialogue
-        string inttoget = (scene + "Instructions");
-        if (PlayerPrefs.GetInt(inttoget) == 1)
+        instructionsName = (scene + "Instructions");
+        if (PlayerPrefs.GetInt(instructionsName) == 1)
         {
             SkipDialogue();
         }
         else
         {
+            if(scene == "Story")
+            {
+                instructionsName = "StorySeen";
+            }
             ForwardDialogue();
         }
         
@@ -90,28 +95,38 @@ public class DialogueScript : MonoBehaviour {
 
     public void ForwardDialogue()
     {
-        // Check current scene and pick the right dialogue for it
-        // If the dialogue for the current scene is over, call function to disable dialogue canvas
-        switch (scene)
+        // Check if text is still running. If it is, stop running it and show it instantly.
+        if (crRunning)
         {
-            case "MasterMason":
+            StopAllCoroutines();
+            myText.text = message;
+            crRunning = false;
+        }
+        else
+        {
+            // Check current scene and pick the right dialogue for it
+            // If the dialogue for the current scene is over, call function to disable dialogue canvas
+            switch (scene)
+            {
+                case "MasterMason":
 
-                ForwardText(4, "MasterMasonInstructions");
-                break;
+                    ForwardText(5);
+                    break;
 
-            case "Carpenter":
+                case "Carpenter":
 
-                ForwardText(7, "CarpenterInstructions");
-                break;
+                    ForwardText(14);
+                    break;
 
-            case "Story":
+                case "Story":
 
-                if (!crRunning)
-                {
-                    ChangeImagery();
-                }
-                ForwardText(29, "StorySeen");
-                break;
+                    if (!crRunning)
+                    {
+                        ChangeImagery();
+                    }
+                    ForwardText(36);
+                    break;
+            }
         }
     }
 
@@ -120,12 +135,12 @@ public class DialogueScript : MonoBehaviour {
         switch (scene)
         {
             case "MasterMason":
-                dialogueCount = 5;
+                dialogueCount = 6;
                 PlayerPrefs.SetInt("MasterMasonCompleted", 1);
                 break;
 
             case "Carpenter":
-                dialogueCount = 8;
+                dialogueCount = 15;
                 PlayerPrefs.SetInt("CarpenterCompleted", 1);
                 break;
         
@@ -138,15 +153,9 @@ public class DialogueScript : MonoBehaviour {
         StartCoroutine(TypeText());
     }
 
-    private void ForwardText(int dialogueEnd, string instructionsName)
+    private void ForwardText(int dialogueEnd)
     {
-        if (crRunning)
-        {
-            StopAllCoroutines();
-            myText.text = message;
-            crRunning = false;
-        }
-        else if (gameFinished)
+        if (gameFinished)
         {
             GameManager.Instance.ChangeScene("MainGame");
         }
@@ -165,24 +174,92 @@ public class DialogueScript : MonoBehaviour {
         }
     }
 
+    public void ReplayDialogue()
+    {
+        if (!gameFinished)
+        {
+            switch (scene)
+            {
+                case "MasterMason":
+                    dialogueCount = 0;
+                    ForwardDialogue();
+                    break;
+
+                case "Carpenter":
+                    dialogueCount = 7;
+                    ForwardDialogue();
+                    break;
+            }
+        }
+    }
+
+    public void BackDialogue()
+    {
+        if (!gameFinished)
+        {
+            switch (scene)
+            {
+                case "MasterMason":
+                    if (dialogueCount > 0)
+                    {
+                        dialogueCount -= 2;
+                        BackText(0);
+                        dialogueCount++;
+                    }
+                    ForwardText(5);
+                    break;
+
+                case "Carpenter":
+                    if (dialogueCount > 7)
+                    {
+                        dialogueCount -= 2;
+                        BackText(7);
+                        dialogueCount++;
+                    }
+                    ForwardText(14);
+                    break;
+            }
+        }
+    }
+
+    private void BackText(int dialogueStart)
+    {
+        if(dialogueCount < dialogueStart)
+        {
+            dialogueCount++;
+        }
+        myText.text = "";
+        message = messages[dialogueCount];
+        StopAllCoroutines();
+        StartCoroutine(TypeText());
+    }
+
     // Create array with dialogue messages
-    // Keep messages at 230 or less characters
+    // Keep messages at 230 or less characters (160 or less for minigame dialogue such as master mason)
     public void CreateDialogue()
     {
         messages = new List<string>
         {
-            // Master mason dialogue (0-5)
-            "Hoi, fijn dat jij er bent. Ik hoorde dat je op zoek was naar een raar stuk metaal. Die mag je ook hebben, maar eerst zou ik het waarderen als jij mij helpt met bouwen van de kerk.",
-            "Ik ben bouwmeester Heinrich. Als bouwmeester mocht ik de kerk ontwerpen en de plannen maken voor het bouwen. Ik was niet altijd een bouwmeester. Mijn eerste vak was steenhouwen. Dat is vormen uit een stuk steen hakken.",
-            "Toen werd ik een van de beste steenhouwers en mocht ik de leerling worden van een bouwmeester. Die heeft mij geleerd hoe ik plannen moest maken en hoe ik het plan moest uitvoeren om een kerk te bouwen.",
-            "Vandaag ben ik bezig met het maken van een kruisribgewelf. Moeilijk woord, he? Kijk naar boven in de kerk, daar kun je een kruisribgewelf zien. Je kan zien hoe de stenen ribben een kruising maken.",
+            // Master mason dialogue (0-6)
+            "Hoi, goed dat jij er bent.",
+            "Ik hoorde dat je op zoek was naar een raar stuk metaal. Die mag je hebben, maar dan waardeer ik het wel als jij mij helpt met bouwen van de kerk.",
+            "Ik ben bouwmeester Heinrich. Als bouwmeester mocht ik de kerk ontwerpen en de plannen maken voor het bouwen.",
+            "Vandaag ben ik bezig met het maken van een kruisribgewelf. Moeilijk woord, he?",
+            "Kijk naar boven in de kerk, daar kun je een kruisribgewelf zien. Je kan zien hoe de stenen ribben een kruising maken.",
             "Ben je klaar om mij te helpen?",
-            "Hoe fantastisch! Dat kruisribgewelf ziet er perfect uit. Bedankt voor je hulp.",
-            // Carpenter dialogue (6-8)
-            "Hallo. Ik ben timmervrouw Philipa. Jij bent degene die op zoek is naar een raar stuk zwaar metaal, toch? Ik heb nooit zoiets gezien hoor! Ik ben wel nieuwsgierig naar wat het is, maar je mag hem zeker terug hebben.",
-            "Zou je iets voor mij eerst kunnen doen? Wij zijn bezig met het bouwen van de toren, maar onze tredmolen is kapot gegaan.",
-            "Geweldig! Je hebt de tredmolen gemaakt. Dank je wel!",
-            // Game Introduction (9-29)
+            "Wat fantastisch! Dat kruisribgewelf ziet er perfect uit. Bedankt voor je hulp.",
+            // Carpenter dialogue (7-15)
+            "Hallo, ik ben timmervrouw Philipa. Jij bent degene die op zoek is naar een raar stuk zwaar metaal, toch? Ik heb nooit zoiets gezien hoor!",
+            "Ik ben wel nieuwsgierig naar wat het is, maar je mag hem zeker terug hebben. Zou je iets voor mij eerst kunnen doen? Wij zijn bezig met het bouwen van de toren.",
+            "Het gaat de hoogste toren van Nederland worden! Helaas is onze tredmolen kapot gegaan. Nu kunnen wij niet meer bakstenen naar boven hijsen.",
+            "Ik heb nieuwe onderdelen hier ergens liggen, maar ik herinner mij niet zo goed meer waar die te vinden zijn.",
+            "Zou jij de onderdelen voor mij kunnen zoeken en naar mij terugbrengen?",
+            "Een tredmolen is een molen die gebruik maakt van de spierkracht van mensen of dieren om in beweging te komen. De tredmolen heeft een groot wiel.",
+            "Bij een tredmolen is het wiel zo groot dat er een of meerdere personen in het wiel kunnen lopen.",
+            "Kun je je dan voorstellen hoe groot het wiel is? En hoe groot de molen zelf is!",
+            "Geweldig! Met deze nieuwe tredmolen kunnen we de toren verder bouwen.",
+
+            // Game Introduction (16-36)
             "Hoi! Ik ben Bert Dijkink de stadshistoricus. Ik ben iemand die veel afweet van de geschiedenis van Zwolle.",
             // panel 2
             "Ik wil je over een schat vertellen die je onder de Grote Kerk kan vinden.",

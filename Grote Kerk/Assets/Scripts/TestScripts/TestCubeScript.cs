@@ -51,12 +51,16 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         Vector3 rayDir = (transform.position - cameraPos);
         RaycastHit hit;
 
+        Debug.Log("Raycast attempt");
         if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
         {
             Debug.Log(Quaternion.Angle(transform.rotation, hit.transform.rotation));
+            Debug.Log("Raycast hit");
+
 
             if(hit.transform.name == gameObject.name)
             {
+                Debug.Log("Name same");
                 if (gameObject.name == "Arch")
                 {
                     if (Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 75)

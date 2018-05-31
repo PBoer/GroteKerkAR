@@ -19,6 +19,13 @@ public class TrackingTriggers : DefaultTrackableEventHandler
                     GameManager.Instance.ChangeScene("MasterMason");
                 }
                 break;
+
+            case "CarpenterCode":
+                if(PlayerPrefs.GetInt("CarpenterCompleted") != 1)
+                {
+                    GameManager.Instance.ChangeScene("Carpenter");
+                }
+                break;
         }
     }
 }
