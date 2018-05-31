@@ -14,9 +14,16 @@ public class TrackingTriggers : DefaultTrackableEventHandler
         switch (gameObject.name)
         {
             case "MasterMasonCode":
-                if(PlayerPrefs.GetInt("MasterMasonCompleted") == 1)
+                if(PlayerPrefs.GetInt("MasterMasonCompleted") != 1)
                 {
                     GameManager.Instance.ChangeScene("MasterMason");
+                }
+                break;
+
+            case "CarpenterCode":
+                if(PlayerPrefs.GetInt("CarpenterCompleted") != 1)
+                {
+                    GameManager.Instance.ChangeScene("Carpenter");
                 }
                 break;
         }

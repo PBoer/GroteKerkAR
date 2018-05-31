@@ -5,12 +5,12 @@ using UnityEngine.EventSystems;
 
 public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 
-    private float myX;
-    private float myY;
+    private string scene;
     private Collider myCollider;
 	// Use this for initialization
 	void Start () {
         myCollider = GetComponent<Collider>();
+        scene = GameManager.Instance.GetCurrentScene();
 	}
 	
 	// Update is called once per frame
@@ -51,12 +51,16 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         Vector3 rayDir = (transform.position - cameraPos);
         RaycastHit hit;
 
+        Debug.Log("Raycast attempt");
         if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
         {
             Debug.Log(Quaternion.Angle(transform.rotation, hit.transform.rotation));
+            Debug.Log("Raycast hit");
+
 
             if(hit.transform.name == gameObject.name)
             {
+                Debug.Log("Name same");
                 if (gameObject.name == "Arch")
                 {
                     if (Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 75)
@@ -72,10 +76,6 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
                     PlaceObject(hit);
                 }
             }
-            //if(Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 60 || gameObject.name == "Base")
-            //{
-            //    PlaceObject(hit);
-            //}
             else
             {
                 Destroy(gameObject);
@@ -96,6 +96,17 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         transform.position = hit.transform.position;
         transform.rotation = hit.transform.rotation;
         transform.tag = "Untagged";
-        GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
+        gameObject.GetComponent<DragNDrop>().enabled = false;
+
+        switch (scene)
+        {
+            case "MasterMason":
+                GameObject.Find("Progress").GetComponent<MasterMasonProgress>().PlacedBlock();
+                break;
+
+            case "Carpenter":
+                GameObject.Find("Progress").GetComponent<CarpenterProgress>().PlacedPart();
+                break;
+        }
     }
 }

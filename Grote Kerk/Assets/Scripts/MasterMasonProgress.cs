@@ -56,6 +56,8 @@ public class MasterMasonProgress : MonoBehaviour {
             case 20:
                 centrings.SetActive(false);
                 top.SetActive(true);
+                PlayerPrefs.SetInt("MasterMasonCompleted", 1);
+                ProgressManager.UpdateMiniGameCounter();
                 myDS.FinishGame();
                 break;
         }
