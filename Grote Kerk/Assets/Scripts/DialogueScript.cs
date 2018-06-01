@@ -124,7 +124,7 @@ public class DialogueScript : MonoBehaviour {
                     {
                         ChangeImagery();
                     }
-                    ForwardText(36);
+                    ForwardText(40);
                     break;
             }
         }
@@ -259,12 +259,13 @@ public class DialogueScript : MonoBehaviour {
             "Kun je je dan voorstellen hoe groot het wiel is? En hoe groot de molen zelf is!",
             "Geweldig! Met deze nieuwe tredmolen kunnen we de toren verder bouwen.",
 
-            // Game Introduction (16-36)
+            // Game Introduction (16-40)
             "Hoi! Ik ben Bert Dijkink de stadshistoricus. Ik ben iemand die veel afweet van de geschiedenis van Zwolle.",
             // panel 2
             "Ik wil je over een schat vertellen die je onder de Grote Kerk kan vinden.",
             // panel 3
-            "Achter het koorhek ligt er een grafsteen die de ingang is naar een crypte. In die crypte kun je allemaal onderdelen van de oude romaanse kerk vinden die hier eerst stond.",
+            "Achter het koorhek ligt er een grafsteen die de ingang is naar een crypte.",
+            "In die crypte kun je allemaal onderdelen van de oude romaanse kerk vinden die hier eerst stond.",
             "In die crypte vind je een deurtje. Als je door dat deurtje gaat vind je de schat van Zwolle!",
             // panel 4
             "Speler: Oh wauw, er is echt een deur! Maar wat is dat blauwe licht?",
@@ -278,14 +279,17 @@ public class DialogueScript : MonoBehaviour {
             "WT Karlijn: ...En ik ben Karlijn.",
             "WT Henk en Karlijn: Wij zitten vast in de middeleeuwen!",
             "Speler: Hoe is dat mogelijk? Ik dacht dat er een schat was.",
-            "WT Henk: Dit is de schat! De schat is een tijdmachine! We hebben het gebruikt om terug in de tijd te gaan om de geschiedenis van Zwolle te beleven.",
+            "WT Henk: Dit is de schat! De schat is een tijdmachine!",
+            "WT Henk: We hebben het gebruikt om terug in de tijd te gaan om de geschiedenis van Zwolle te beleven.",
             "WT Henk: Wij hebben de tijdmachine gebruikt, maar helaas is onze controlepaneel kapotgegaan.",
-            "WT Karlijn: Zie je die lege plek op de rechter tafel? Daar stond het controlepaneel, maar die is in 4 stukken gebroken toen wij terug naar de middeleeuwen gingen om de bouw van de Grote Kerk te beleven.",
+            "WT Karlijn: Zie je die lege plek op de rechter tafel?",
+            "WT Karlijn: Daar stond het controlepaneel,",
+            "WT Karlijn: maar die is in 4 stukken gebroken toen wij terug naar de middeleeuwen gingen om de bouw van de Grote Kerk te beleven.",
             "Speler: Hoe kan ik helpen?",
             "WT Henk: Vier ambachtslieden hebben elk een stuk van het controlepaneel. Vergeet niet de walkie talkie mee te nemen.",
             "WT Henk: Hij is speciaal. Met behulp van de walkie talkie kan je terug in de middeleeuwen kijken en met de ambachtslieden praten.",
             "WT Karlijn: En dan moet je tijdstukken nog scannen! Zo kunnen wij de belangrijke momenten in de geschiedenis van de Grote Kerk ervaren.",
-            "Speler: Super!",
+            "Speler: Super!"
             //
 
         };
@@ -301,24 +305,57 @@ public class DialogueScript : MonoBehaviour {
             case "Story":
                 switch (dialogueCount)
                 {
-                    case 10:
+                    case 17:
                         Imagery[0].SetActive(true);
                         break;
 
-                    case 12:
+                    case 19:
                         Imagery[1].SetActive(true);
                         break;
 
-                    case 13:
+                    case 21:
                         Imagery[2].SetActive(true);
+                        Imagery[5].SetActive(true);
                         break;
 
-                    case 14:
+                    case 22:
                         Imagery[3].SetActive(true);
                         break;
 
-                    case 15:
+                    case 23:
                         Imagery[4].SetActive(true);
+                        break;
+                    case 24:
+                        Imagery[5].SetActive(false);
+                        Imagery[6].SetActive(true);
+                        break;
+                    case 25:
+                        Imagery[6].SetActive(false);
+                        Imagery[5].SetActive(true);
+                        break;
+                    case 26:
+                        Imagery[5].SetActive(false);
+                        Imagery[6].SetActive(true);
+                        break;
+                    case 29:
+                        Imagery[6].SetActive(false);
+                        Imagery[5].SetActive(true);
+                        break;
+                    case 30:
+                        Imagery[5].SetActive(false);
+                        Imagery[6].SetActive(true);
+                        break;
+                    case 36:
+                        Imagery[6].SetActive(false);
+                        Imagery[5].SetActive(true);
+                        break;
+                    case 37:
+                        Imagery[5].SetActive(false);
+                        Imagery[6].SetActive(true);
+                        break;
+                    case 40:
+                        Imagery[6].SetActive(false);
+                        Imagery[5].SetActive(true);
                         break;
                 }
                 break;
