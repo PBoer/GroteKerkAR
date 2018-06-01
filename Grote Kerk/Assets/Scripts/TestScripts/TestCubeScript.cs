@@ -37,7 +37,7 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
     public void OnEndDrag(PointerEventData eventdata)
     {
         // Raycaster object is used instead of camera because Vuforia's camera doesn't work well with raycasting
-        GameObject myRaycaster = GameObject.Find("Raycaster");
+        //GameObject myRaycaster = GameObject.Find("Raycaster");
 
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 8;
@@ -47,12 +47,16 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         layerMask = ~layerMask;
 
         // Temporary variables to raycast from the camera's position (through Raycaster object) in the direction of dragged object
-        Vector3 cameraPos = myRaycaster.transform.position;
-        Vector3 rayDir = (transform.position - cameraPos);
+        //Vector3 cameraPos = myRaycaster.transform.position;
+        //Vector3 rayDir = (transform.position - cameraPos);
         RaycastHit hit;
 
         Debug.Log("Raycast attempt");
-        if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
+        //if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
+        //RaycastHit hit;
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             Debug.Log(Quaternion.Angle(transform.rotation, hit.transform.rotation));
             Debug.Log("Raycast hit");

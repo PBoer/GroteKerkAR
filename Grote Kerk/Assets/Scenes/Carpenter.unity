@@ -658,7 +658,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 582032d4e9fa96540a55c62fe7e6f13c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a48e13f50b463348bf14336e786399f, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -12365,7 +12365,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: f164a7583b383104a88bd1c02106fcf7, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 0
@@ -13411,10 +13411,10 @@ BoxCollider:
   m_GameObject: {fileID: 1000834428}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0.041358262, y: 0.2279311, z: -0.034350287}
+  m_Size: {x: 0.046129078, y: 0.041056406, z: 0.035256017}
+  m_Center: {x: 0.04779586, y: 0.23041938, z: -0.035290893}
 --- !u!1 &1011752873
 GameObject:
   m_ObjectHideFlags: 0
@@ -13541,8 +13541,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 0.2, z: 0.2}
-  m_Center: {x: 0.055269618, y: 0.24774823, z: -0.020581214}
+  m_Size: {x: 0.020566821, y: 0.038070474, z: 0.020197827}
+  m_Center: {x: 0.04554535, y: 0.21678321, z: -0.030433128}
 --- !u!1 &1018975018
 GameObject:
   m_ObjectHideFlags: 0
@@ -14567,8 +14567,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.04092151, y: 0.04371777, z: 0.05374929}
-  m_Center: {x: 0.049076464, y: 0.22056416, z: -0.022883642}
+  m_Size: {x: 0.027382229, y: 0.037556317, z: 0.024458071}
+  m_Center: {x: 0.045855675, y: 0.2174833, z: -0.030289186}
 --- !u!4 &1100606477
 Transform:
   m_ObjectHideFlags: 0
@@ -19818,7 +19818,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 582032d4e9fa96540a55c62fe7e6f13c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ad5f175eb73edf8429ef7f2acf549def, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -24285,8 +24285,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.067842096, y: 0.04072761, z: 0.066466615}
-  m_Center: {x: 0.050713755, y: 0.22963576, z: -0.02988231}
+  m_Size: {x: 0.053791787, y: 0.0407276, z: 0.04379289}
+  m_Center: {x: 0.05071376, y: 0.2296362, z: -0.037840955}
 --- !u!4 &1868942192
 Transform:
   m_ObjectHideFlags: 0
@@ -25387,10 +25387,10 @@ BoxCollider:
   m_GameObject: {fileID: 1926046611}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0.059393074, y: 0.21346983, z: -0.042966727}
+  m_Size: {x: 0.022465752, y: 0.022174666, z: 0.0255184}
+  m_Center: {x: 0.05754342, y: 0.21415032, z: -0.04314926}
 --- !u!1 &1927356116
 GameObject:
   m_ObjectHideFlags: 0
