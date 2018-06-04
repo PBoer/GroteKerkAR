@@ -203,10 +203,14 @@ public class DialogueScript : MonoBehaviour {
                     if (dialogueCount > 0)
                     {
                         dialogueCount -= 2;
+                        Debug.Log("minus");
+                        Debug.Log(dialogueCount);
                         BackText(0);
-                        dialogueCount++;
                     }
-                    ForwardText(5);
+                    else
+                    {
+                        BackText(0);
+                    }
                     break;
 
                 case "Carpenter":
@@ -214,9 +218,11 @@ public class DialogueScript : MonoBehaviour {
                     {
                         dialogueCount -= 2;
                         BackText(7);
-                        dialogueCount++;
                     }
-                    ForwardText(14);
+                    else
+                    {
+                        BackText(7);
+                    }
                     break;
             }
         }
@@ -229,9 +235,11 @@ public class DialogueScript : MonoBehaviour {
             dialogueCount++;
         }
         myText.text = "";
+        Debug.Log("Line " + dialogueCount);
         message = messages[dialogueCount];
         StopAllCoroutines();
         StartCoroutine(TypeText());
+        dialogueCount++;
     }
 
     // Create array with dialogue messages
