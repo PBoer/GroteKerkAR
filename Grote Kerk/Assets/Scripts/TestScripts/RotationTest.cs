@@ -25,10 +25,12 @@ public class RotationTest : MonoBehaviour {
                     }
                     else
                     {
-                        Vector3 targetPoint = getTouchedPoint(); Quaternion rot = Quaternion.FromToRotation(grabbedPoint, targetPoint); transform.localRotation *= rot;
+                        Vector3 targetPoint = getTouchedPoint();
+                        Quaternion rot = Quaternion.FromToRotation(grabbedPoint, targetPoint);
+                        transform.localRotation *= rot;
                         foreach (GameObject material in materials)
                         {
-                            material.transform.rotation = transform.rotation;
+                            material.transform.localRotation *= rot;
                         }
                     }
                 }
@@ -46,5 +48,14 @@ public class RotationTest : MonoBehaviour {
 
         return transform.InverseTransformPoint(hit.point);
 
+    }
+
+    public void FlipArch()
+    {
+        materials = GameObject.FindGameObjectsWithTag("Material");
+        foreach(GameObject material in materials)
+        {
+            material.transform.Rotate(Vector3.up * 45);
+        }
     }
 }
