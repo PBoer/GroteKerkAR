@@ -11,6 +11,8 @@ public class MasterMasonProgress : MonoBehaviour {
     private GameObject keystones;
     private GameObject top;
     private GameObject centrings;
+    private GameObject ribs;
+    private GameObject midKeystone;
     
 
 	// Use this for initialization
@@ -21,12 +23,16 @@ public class MasterMasonProgress : MonoBehaviour {
         keystones = GameObject.Find("Keystones");
         centrings = GameObject.Find("Centrings");
         top = GameObject.Find("Top");
+        ribs = GameObject.Find("Ribs");
+        midKeystone = GameObject.Find("MidKeystone");
 
         pillars.SetActive(false);
         arches.SetActive(false);
         keystones.SetActive(false);
         top.SetActive(false);
         centrings.SetActive(false);
+        ribs.SetActive(false);
+        midKeystone.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -54,6 +60,14 @@ public class MasterMasonProgress : MonoBehaviour {
                 break;
 
             case 20:
+                ribs.SetActive(true);
+                break;
+
+            case 24:
+                midKeystone.SetActive(true);
+                break;
+
+            case 25:
                 centrings.SetActive(false);
                 top.SetActive(true);
                 PlayerPrefs.SetInt("MasterMasonCompleted", 1);
