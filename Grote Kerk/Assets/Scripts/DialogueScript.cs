@@ -89,6 +89,7 @@ public class DialogueScript : MonoBehaviour {
         }
         else
         {
+            PlayerPrefs.SetInt(instructionsName, 1);
             dialogueCanvas.SetActive(false);
         }
     }
@@ -169,7 +170,6 @@ public class DialogueScript : MonoBehaviour {
         }
         else
         {
-            PlayerPrefs.SetInt(instructionsName, 1);
             SkipDialogue();
         }
     }
