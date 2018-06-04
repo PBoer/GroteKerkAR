@@ -34,7 +34,6 @@ public class NavBarButtonFunctions : MonoBehaviour {
         }
         else
         {
-            Debug.Log("Not in test scene");
             GameManager.Instance.ChangeScene("MainGame");
         }
     }
@@ -68,9 +67,16 @@ public class NavBarButtonFunctions : MonoBehaviour {
         }
     }
 
-    public void Role()
+    public void TechnicalExplanation()
     {
-        Debug.Log("TODO go to role screen");
+        if (GameManager.Instance.GetCurrentScene() == "TechnicalExplanation")
+        {
+            Debug.Log("Already in test scene");
+        }
+        else
+        {
+            GameManager.Instance.ChangeScene("TechnicalExplanation");
+        }
     }
 
     public void Settings()

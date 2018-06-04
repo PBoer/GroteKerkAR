@@ -35,3 +35,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Timeline.unity
     guid: cb6d4cb00d1e1ff4eb7bb5f1dc4290bd
+  - enabled: 1
+    path: Assets/Scenes/TechnicalExplanation.unity
+    guid: 33c101f8d6f16d34f88e3f65dfb6f96f
