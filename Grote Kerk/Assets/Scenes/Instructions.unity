@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -370,7 +370,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 597.5967, y: 100}
+  m_SizeDelta: {x: 597.5967, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &120132894
 MonoBehaviour:
@@ -391,7 +391,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 1416777d2dfc1e741a37e9c86b24dfe2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -616,7 +616,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'Hoe gaaf dat je Henk en Karlijn ga helpen! Om dat te doen moet je door
-    de kerk lopen om twee soorten punten te scannen: geschiedenispunten en de vakmanpunten.
+    de kerk lopen om twee soorten punten te scannen: tijdstukken en ambachtspunten.
     Zoals je kunt zien staan die op de kaart aangegeven.'
 --- !u!222 &229705743
 CanvasRenderer:
@@ -1213,8 +1213,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Als je een punt moet scannen moet je op de camera knop klikken en richten
-    op het plaatje. Dan verschijnt er iets op je scherm.
+  m_Text: Om een punt te scannen moet je op de camera knop klikken en richten op een
+    van de 18 plaatjes. Dan verschijnt er iets op je scherm.
 --- !u!222 &733695671
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 513913143}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.3162634
+  m_Size: 0.21162258
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2086,7 +2086,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: -0.000030538948, y: 0.00003131522}
-  m_SizeDelta: {x: -243.40381, y: -80.08008}
+  m_SizeDelta: {x: -0.24267578, y: 4.030945}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1003612148
 MonoBehaviour:
@@ -2198,8 +2198,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1312424896}
   m_HandleRect: {fileID: 1312424895}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 1
+  m_Size: 0.98777515
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2320,9 +2320,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: De control panel is in 4 stukken. Je moet 4 stukken terug krijgen van 4
-    verschillende vakmannen. Die zijn de bouwmeester, de timmervrouw, de glas in lood
-    zetter en de steenhouwer. Zij zullen je ook een beetje over hun vak vertellen.
+  m_Text: Als je een ambachtspunt scant kun je met de ambachtspersoon van dat punt
+    praten om een van de vier stukken van de controlepaneel terug te krijgen. De 4
+    ambachtslieden zijn de bouwmeester, de timmervrouw, de glas-in-lood zetter en
+    de steenhouwer. Zij zullen je ook een beetje over hun vak vertellen.
 --- !u!222 &1045448512
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2658,7 +2659,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 298.79834, y: -294.91992}
+  m_AnchoredPosition: {x: 298.79834, y: -259.73096}
   m_SizeDelta: {x: 597.5967, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1157947731
@@ -2729,8 +2730,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 308.79834, y: -182.45996}
-  m_SizeDelta: {x: 597.5967, y: 344.91992}
+  m_AnchoredPosition: {x: 308.79834, y: -164.86548}
+  m_SizeDelta: {x: 597.5967, y: 309.73096}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1214337616
 MonoBehaviour:
@@ -2868,10 +2869,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Als je een geschiedenispunt scant krijg je informatie over het desbetreffende
-    object. De jaartal wordt ook opgeslagen in het walkie-talkie voor Henk en Karlijn.
-    Als je een vakmanpunt scant kun je met de vakman van die punt praten om een stuk
-    van de control panel te krijgen.
+  m_Text: Als je een tijdstuk scant verzamel je energie voor de tijdmachine. Henk
+    en Karlijn zullen je ook wat informatie vertellen over wat je hebt gescand.
 --- !u!222 &1293234083
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2911,7 +2910,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 597.5967, y: 100}
+  m_SizeDelta: {x: 597.5967, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1306839770
 MonoBehaviour:
@@ -2932,9 +2931,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7804c850c65d47a45ba5bbdafb8a2045, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3098,7 +3097,7 @@ RectTransform:
   m_Father: {fileID: 93510591}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 0.012224853}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -3262,7 +3261,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 597.5967, y: 100}
+  m_SizeDelta: {x: 597.5967, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1345774710
 MonoBehaviour:
@@ -3283,9 +3282,9 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: f5a3045038daa5c4e8917d8a2080a652, type: 3}
   m_Type: 0
-  m_PreserveAspect: 0
+  m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -3613,8 +3612,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 298.79834, y: -122.45996}
-  m_SizeDelta: {x: 597.5967, y: 244.91992}
+  m_AnchoredPosition: {x: 298.79834, y: -104.86548}
+  m_SizeDelta: {x: 597.5967, y: 209.73096}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530736062
 MonoBehaviour:
@@ -3662,12 +3661,11 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "Bouwmeester Heinrich heeft jouw hulp nodig met het maken van een kruisribgewelf.
-    Dit vereist dat je in een specifieke volgorde werkt. [3D modellen toevoegen] Eerst
-    moet je een zuil bouwen en plaatsen. Daarna moet je de spitsbogen maken om als
-    laatst de kruisribgewelf te maken.\r\n\r\nDe onderdelen die je moet gebruiken
-    zijn er in de balk onderin de scherm. Klik op een onderdeel en schuif het naar
-    de juiste plek. Blijf dit herhalen totdat de kruisribgewelf compleet is. \r\n\r\nKlaar
-    om te beginnen?\r\n"
+    Dit vereist dat je in een specifieke volgorde werkt. Eerst moet je een zuil bouwen
+    en plaatsen. Daarna moet je de spitsbogen maken om als laatst de kruisribgewelf
+    te maken.\r\n\r\nDe onderdelen die je moet gebruiken zijn er in de balk onderin
+    de scherm. Klik op een onderdeel en schuif het naar de juiste plek. Blijf dit
+    herhalen totdat de kruisribgewelf compleet is. \r\n\r\nKlaar om te beginnen?\r\n"
 --- !u!222 &1530736064
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3851,8 +3849,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Als je alle geschiedenispunten hebt gescand en alle 4 stukken van de control
-    panel hebt kan Henk en Karlijn terug naar de heden.
+  m_Text: Als je alle vier stukken van het controlepaneel hebt en al de energie hebt
+    verzameld kunnen Henk en Karlijn terug naar het heden.
 --- !u!222 &1604733688
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4107,7 +4105,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.000013770469, y: 0.00000012825404}
+  m_AnchoredPosition: {x: -0.000042279953, y: 0.00000012825404}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1703180952
@@ -4542,7 +4540,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6e7c855d60b42dd4a9a37b20ea39416e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
