@@ -65,7 +65,7 @@ public class GameManager : MonoBehaviour {
     {
         _loadingScreen.SetActive(false);
     }
-
+    
     public void ChangeScene(string scene)
     {
         if (GetCurrentScene() == "preload")
@@ -91,6 +91,15 @@ public class GameManager : MonoBehaviour {
     public string GetCurrentScene()
     {
         return SceneManager.GetActiveScene().name;
+    }
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <returns></returns>
+    public string getPreviousScene()
+    {
+        return previousScene;
     }
 
     /// <summary>

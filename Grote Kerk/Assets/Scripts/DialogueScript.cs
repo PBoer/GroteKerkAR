@@ -80,7 +80,14 @@ public class DialogueScript : MonoBehaviour {
     {
         if (scene == "Story")
         {
-            GameManager.Instance.ChangeScene("Map");
+            if (PlayerPrefs.GetInt("StorySeen") == 1)
+            {
+                GameManager.Instance.ChangeScene("Map");
+            }
+            else
+            {
+                GameManager.Instance.ChangeScene("Instructions");
+            }
         }
 
         if(gameFinished)

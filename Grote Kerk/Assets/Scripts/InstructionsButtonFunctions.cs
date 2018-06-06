@@ -54,7 +54,14 @@ public class InstructionsButtonFunctions : MonoBehaviour {
 
     public void Back()
     {
-        GameManager.Instance.GoToPreviousScene();
+        if (GameManager.Instance.getPreviousScene() == "Story")
+        {
+            GameManager.Instance.ChangeScene("Map");
+        }
+        else
+        {
+            GameManager.Instance.GoToPreviousScene();
+        }
     }
 
     public void GameInstructions()

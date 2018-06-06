@@ -16,7 +16,16 @@ public class MainMenuButtonFunctions : MonoBehaviour {
 
     public void StartGame()
     {
-        GameManager.Instance.ChangeScene("Map");
+        Debug.Log("storyseen = "+ PlayerPrefs.GetInt("StorySeen"));
+        if (PlayerPrefs.GetInt("StorySeen") == 1)
+        {
+            GameManager.Instance.ChangeScene("Map");
+        }
+        else
+        {
+            GameManager.Instance.ChangeScene("Story");
+        }
+        
     }
 
     public void Instructions()
