@@ -189,6 +189,10 @@ public class DialogueScript : MonoBehaviour {
                     dialogueCount = 7;
                     ForwardDialogue();
                     break;
+                case "Story":
+                    dialogueCount = 16;
+                    ForwardDialogue();
+                    break;
             }
         }
     }
@@ -222,6 +226,21 @@ public class DialogueScript : MonoBehaviour {
                     else
                     {
                         BackText(7);
+                    }
+                    break;
+
+                case "Story":
+                    if (dialogueCount > 16)
+                    {
+                        dialogueCount -= 2;
+                        ChangeImagery();
+                        BackText(16);
+                    }
+                    else
+                    {
+                        BackText(16);    
+                        ChangeImagery();
+                        
                     }
                     break;
             }
@@ -313,57 +332,95 @@ public class DialogueScript : MonoBehaviour {
             case "Story":
                 switch (dialogueCount)
                 {
-                    case 17:
+                    case 16:
                         Imagery[0].SetActive(true);
+                        Imagery[1].SetActive(false);
+                        Imagery[2].SetActive(false);
+                        Imagery[3].SetActive(false);
+                        Imagery[4].SetActive(false);
+                        Imagery[5].SetActive(false);
+                        Imagery[6].SetActive(false);
+                        Imagery[7].SetActive(false);
+                        break;
+                    case 17:
+                        Imagery[0].SetActive(false);
+                        Imagery[1].SetActive(true);
+                        Imagery[2].SetActive(false);
+                        Imagery[3].SetActive(false);
+                        Imagery[4].SetActive(false);
+                        Imagery[5].SetActive(false);
                         break;
 
                     case 19:
-                        Imagery[1].SetActive(true);
+                        Imagery[0].SetActive(false);
+                        Imagery[1].SetActive(false);
+                        Imagery[2].SetActive(true);
+                        Imagery[3].SetActive(false);
+                        Imagery[4].SetActive(false);
+                        Imagery[5].SetActive(false);
+                        Imagery[6].SetActive(false);
                         break;
 
                     case 21:
-                        Imagery[2].SetActive(true);
-                        Imagery[5].SetActive(true);
+                        Imagery[0].SetActive(false);
+                        Imagery[1].SetActive(false);
+                        Imagery[2].SetActive(false);
+                        Imagery[3].SetActive(true);
+                        Imagery[4].SetActive(false);
+                        Imagery[5].SetActive(false);
+                        Imagery[6].SetActive(true);
                         break;
 
                     case 22:
-                        Imagery[3].SetActive(true);
+                        Imagery[0].SetActive(false);
+                        Imagery[1].SetActive(false);
+                        Imagery[2].SetActive(false);
+                        Imagery[3].SetActive(false);
+                        Imagery[4].SetActive(true);
+                        Imagery[5].SetActive(false);
                         break;
 
                     case 23:
-                        Imagery[4].SetActive(true);
+                        Imagery[0].SetActive(false);
+                        Imagery[1].SetActive(false);
+                        Imagery[2].SetActive(false);
+                        Imagery[3].SetActive(false);
+                        Imagery[4].SetActive(false);
+                        Imagery[5].SetActive(true);
+                        Imagery[6].SetActive(true);
+                        Imagery[7].SetActive(false);
                         break;
                     case 24:
-                        Imagery[5].SetActive(false);
-                        Imagery[6].SetActive(true);
+                        Imagery[6].SetActive(false);
+                        Imagery[7].SetActive(true);
                         break;
                     case 25:
-                        Imagery[6].SetActive(false);
-                        Imagery[5].SetActive(true);
+                        Imagery[7].SetActive(false);
+                        Imagery[6].SetActive(true);
                         break;
                     case 26:
-                        Imagery[5].SetActive(false);
-                        Imagery[6].SetActive(true);
+                        Imagery[6].SetActive(false);
+                        Imagery[7].SetActive(true);
                         break;
                     case 29:
-                        Imagery[6].SetActive(false);
-                        Imagery[5].SetActive(true);
+                        Imagery[7].SetActive(false);
+                        Imagery[6].SetActive(true);
                         break;
                     case 30:
-                        Imagery[5].SetActive(false);
-                        Imagery[6].SetActive(true);
+                        Imagery[6].SetActive(false);
+                        Imagery[7].SetActive(true);
                         break;
                     case 36:
-                        Imagery[6].SetActive(false);
-                        Imagery[5].SetActive(true);
-                        break;
-                    case 37:
-                        Imagery[5].SetActive(false);
+                        Imagery[7].SetActive(false);
                         Imagery[6].SetActive(true);
                         break;
-                    case 40:
+                    case 37:
                         Imagery[6].SetActive(false);
-                        Imagery[5].SetActive(true);
+                        Imagery[7].SetActive(true);
+                        break;
+                    case 40:
+                        Imagery[7].SetActive(false);
+                        Imagery[6].SetActive(true);
                         break;
                 }
                 break;
