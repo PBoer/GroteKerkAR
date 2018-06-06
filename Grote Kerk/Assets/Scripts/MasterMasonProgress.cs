@@ -61,14 +61,11 @@ public class MasterMasonProgress : MonoBehaviour {
 
             case 20:
                 ribs.SetActive(true);
-                break;
-
-            case 24:
                 midKeystone.SetActive(true);
+                centrings.SetActive(false);
                 break;
 
-            case 25:
-                centrings.SetActive(false);
+            case 21:
                 top.SetActive(true);
                 PlayerPrefs.SetInt("MasterMasonCompleted", 1);
                 ProgressManager.UpdateMiniGameCounter();

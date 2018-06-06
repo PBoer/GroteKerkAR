@@ -7,6 +7,9 @@ public class GameManager : MonoBehaviour {
 
     public static GameManager Instance { get; private set; }
     private GameObject _overlay;
+    private GameObject _loadingScreen;
+    private AsyncOperation sceneLoading;
+    private bool isLoading;
     private string previousScene = "MainMenu";
     private string twoScenesBack = "MainMenu";
 
@@ -15,7 +18,9 @@ public class GameManager : MonoBehaviour {
     {
         if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
         _overlay = GameObject.Find("MainOverlay");
+        _loadingScreen = GameObject.Find("LoadScreen");
         DisableOverlay();
+        DisableLoadingScreen();
     }
 
     // Use this for initialization
@@ -25,7 +30,14 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (isLoading)
+        {
+            if (sceneLoading.isDone)
+            {
+                DisableLoadingScreen();
+                isLoading = false;
+            }
+        }
 	}
 
     public void TestBoop()
@@ -43,15 +55,37 @@ public class GameManager : MonoBehaviour {
         _overlay.SetActive(false);
     }
 
+    public void EnableLoadingScreen()
+    {
+        _loadingScreen.SetActive(true);
+    }
+
+
+    public void DisableLoadingScreen()
+    {
+        _loadingScreen.SetActive(false);
+    }
+
     public void ChangeScene(string scene)
     {
+        if (GetCurrentScene() == "preload")
+        {
+
+        }
+        else
+        {
+            isLoading = true;
+            EnableLoadingScreen();
+        }
         // prevents player getting stuk in a endless back button loop
         if (GetCurrentScene() != "Instructions" && GetCurrentScene() != previousScene)
         {
             twoScenesBack = previousScene;
             previousScene = GetCurrentScene();
         }
-        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        sceneLoading = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
+        
+        
     }
 
     public string GetCurrentScene()
