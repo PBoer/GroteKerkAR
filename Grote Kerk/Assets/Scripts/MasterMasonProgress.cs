@@ -13,11 +13,14 @@ public class MasterMasonProgress : MonoBehaviour {
     private GameObject centrings;
     private GameObject ribs;
     private GameObject midKeystone;
-    
 
-	// Use this for initialization
-	void Start () {
+
+    private void Awake()
+    {
         myDS = GameObject.Find("Dialogue").GetComponent<DialogueScript>();
+    }
+    // Use this for initialization
+    void Start () {
         pillars = GameObject.Find("Pillars");
         arches = GameObject.Find("Arches");
         keystones = GameObject.Find("Keystones");

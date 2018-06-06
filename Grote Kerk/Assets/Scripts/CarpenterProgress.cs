@@ -10,10 +10,14 @@ public class CarpenterProgress : MonoBehaviour {
     private GameObject treadmillWheel;
     private GameObject treadmillTop;
 
-	// Use this for initialization
-	void Start () {
 
+    private void Awake()
+    {
         myDS = GameObject.Find("Dialogue").GetComponent<DialogueScript>();
+    }
+    // Use this for initialization
+    void Start () {
+
         treadmillBase = GameObject.Find("Treadmill_Base");
         treadmillWheel = GameObject.Find("Treadmill_Wheel");
         treadmillTop = GameObject.Find("Treadmill_Top");
