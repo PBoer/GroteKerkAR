@@ -16,7 +16,17 @@ public class GameManager : MonoBehaviour {
 
     void Awake()
     {
-        if (Instance == null) { Instance = this; } else { Debug.Log("Warning: multiple " + this + " in scene!"); }
+        // Fill static object. If static object is already filled, log a warning
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Debug.Log("Warning: multiple " + this + " in scene!");
+        }
+
+        // Fill overlay and loadingscreen variables with their respective objects, then disable them
         _overlay = GameObject.Find("MainOverlay");
         _loadingScreen = GameObject.Find("LoadScreen");
         DisableOverlay();
@@ -30,6 +40,8 @@ public class GameManager : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        // If game is finished loading, disable loading screen again
         if (isLoading)
         {
             if (sceneLoading.isDone)
@@ -40,34 +52,45 @@ public class GameManager : MonoBehaviour {
         }
 	}
 
-    public void TestBoop()
-    {
-        Debug.Log("Success");
-    }
-
+    /// <summary>
+    /// Function to enable the navigation bar
+    /// </summary>
     public void EnableOverlay()
     {
         _overlay.SetActive(true);
     }
 
+    /// <summary>
+    /// Function to disable the navigation bar
+    /// </summary>
     public void DisableOverlay()
     {
         _overlay.SetActive(false);
     }
 
+    /// <summary>
+    /// Function to enable the loading screen
+    /// </summary>
     public void EnableLoadingScreen()
     {
         _loadingScreen.SetActive(true);
     }
 
-
+    /// <summary>
+    /// Function to disable the loading screen
+    /// </summary>
     public void DisableLoadingScreen()
     {
         _loadingScreen.SetActive(false);
     }
     
+    /// <summary>
+    /// Function to change to the scene with the name given in the function call
+    /// </summary>
+    /// <param name="scene"></param>
     public void ChangeScene(string scene)
     {
+        // Enable loading screen unless the current scene is the preload scene
         if (GetCurrentScene() == "preload")
         {
 
@@ -77,24 +100,30 @@ public class GameManager : MonoBehaviour {
             isLoading = true;
             EnableLoadingScreen();
         }
-        // prevents player getting stuk in a endless back button loop
+        // Prevents player getting stuck in an endless back button loop
         if (GetCurrentScene() != "Instructions" && GetCurrentScene() != previousScene)
         {
             twoScenesBack = previousScene;
             previousScene = GetCurrentScene();
         }
+
+        // Load next scene asynchronously and keep track so the loading screen can be disabled when done loading
         sceneLoading = SceneManager.LoadSceneAsync(scene, LoadSceneMode.Single);
         
         
     }
 
+    /// <summary>
+    /// Function to get the name of the current scene
+    /// </summary>
+    /// <returns></returns>
     public string GetCurrentScene()
     {
         return SceneManager.GetActiveScene().name;
     }
 
     /// <summary>
-    /// 
+    /// Function to get the name of the previous scene
     /// </summary>
     /// <returns></returns>
     public string getPreviousScene()
@@ -103,11 +132,11 @@ public class GameManager : MonoBehaviour {
     }
 
     /// <summary>
-    /// sends you back to Previous scene with 2 exeptions
+    /// Sends you back to previous scene with 2 exceptions
     /// </summary>
     public void GoToPreviousScene()
     {
-        // prevents player getting stuk in a endless back button loop
+        // prevents player getting stuck in an endless back button loop
         if (previousScene == "Instructions" || GetCurrentScene() == previousScene)
         {
             ChangeScene(twoScenesBack);

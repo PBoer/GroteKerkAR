@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
+public class ObjectPlacement : MonoBehaviour, IBeginDragHandler, IEndDragHandler {
 
     private string scene;
     private Collider myCollider;
+
 	// Use this for initialization
 	void Start () {
         myCollider = GetComponent<Collider>();
@@ -36,9 +37,6 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
      */
     public void OnEndDrag(PointerEventData eventdata)
     {
-        // Raycaster object is used instead of camera because Vuforia's camera doesn't work well with raycasting
-        //GameObject myRaycaster = GameObject.Find("Raycaster");
-
         // Bit shift the index of the layer (8) to get a bit mask
         int layerMask = 1 << 8;
 
@@ -46,25 +44,22 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         // But instead we want to collide against everything except layer 8. The ~ operator does this, it inverts a bitmask.
         layerMask = ~layerMask;
 
-        // Temporary variables to raycast from the camera's position (through Raycaster object) in the direction of dragged object
-        //Vector3 cameraPos = myRaycaster.transform.position;
-        //Vector3 rayDir = (transform.position - cameraPos);
         RaycastHit hit;
-
-        Debug.Log("Raycast attempt");
-        //if (Physics.Raycast(cameraPos, rayDir, out hit, Mathf.Infinity, layerMask))
-        //RaycastHit hit;
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
+        // Check if raycast hits anything, if not, destroy this object
         if (Physics.Raycast(ray, out hit, Mathf.Infinity, layerMask))
         {
             Debug.Log(Quaternion.Angle(transform.rotation, hit.transform.rotation));
-            Debug.Log("Raycast hit");
 
-
+            // Check name of the object that was hit
+            // If name is the same, replace the object that was hit with this one
+            // Otherwise, destroy this object
             if(hit.transform.name == gameObject.name)
             {
-                Debug.Log("Name same");
+                // If object is an arch, the rotation also needs to be similar,
+                // Check difference between the two objects' rotations, if they are close enough, replace the hit object,
+                // otherwise destroy this object
                 if (gameObject.name == "Arch")
                 {
                     if (Quaternion.Angle(transform.rotation, hit.transform.rotation) <= 75)
@@ -91,17 +86,26 @@ public class TestCubeScript : MonoBehaviour, IBeginDragHandler, IEndDragHandler 
         }
     }
 
+    /// <summary>
+    /// Function to replace a hit object with the dragged object,
+    /// using RaycastHit that was passed along in the function call
+    /// </summary>
+    /// <param name="hit"></param>
     private void PlaceObject(RaycastHit hit)
     {
+        // Replace target with this object and disable collider so it can't be manipulated anymore
         myCollider.enabled = false;
         transform.parent = hit.transform.parent;
         transform.localScale = hit.transform.localScale;
         Destroy(hit.transform.gameObject);
         transform.position = hit.transform.position;
         transform.rotation = hit.transform.rotation;
+
+        // Remove tag so the object can't be rotated anymore
         transform.tag = "Untagged";
         gameObject.GetComponent<DragNDrop>().enabled = false;
 
+        // Tell this scene's progress script a block/part has been placed
         switch (scene)
         {
             case "MasterMason":

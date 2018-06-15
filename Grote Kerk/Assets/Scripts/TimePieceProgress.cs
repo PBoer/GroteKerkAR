@@ -8,6 +8,12 @@ public class TimePieceProgress : DefaultTrackableEventHandler{
     public int TimePieceId;
     public GameObject ScanDonePopup;
     public GameObject Canvas;
+
+    /// <summary>
+    /// When the game detects an image target for a time piece,
+    /// update the PlayerPref for that timepiece,
+    /// and show a popup informing the player that a time piece has been scanned
+    /// </summary>
     protected override void OnTrackingFound()
     {
         base.OnTrackingFound();
@@ -18,6 +24,12 @@ public class TimePieceProgress : DefaultTrackableEventHandler{
         StartCoroutine(FadeTextToZeroAlpha(3f, ScanDonePopup.GetComponent<Text>()));
     }
 
+    /// <summary>
+    /// Function to fade out the popup informing a player that a time piece has been scanned
+    /// </summary>
+    /// <param name="t"></param>
+    /// <param name="i"></param>
+    /// <returns></returns>
     public IEnumerator FadeTextToZeroAlpha(float t, Text i)
     {
 

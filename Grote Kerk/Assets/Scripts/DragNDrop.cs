@@ -13,6 +13,8 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         initialPointerId = int.MaxValue;
     }
 
+
+    // When player begins dragging object, calculate offset, using mouse position and object position
     public void OnBeginDrag(PointerEventData eventData)
     {
         if (initialPointerId == int.MaxValue)
@@ -24,6 +26,7 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
+    // Reset initialPointerId when player stops dragging object
     public void OnEndDrag(PointerEventData eventData)
     {
         if (initialPointerId == eventData.pointerId)
@@ -32,6 +35,7 @@ public class DragNDrop : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         }
     }
 
+    // When player drags object, update object's position based on the offset and new mouse position
     public void OnDrag(PointerEventData eventData)
     {
         if (initialPointerId == eventData.pointerId)

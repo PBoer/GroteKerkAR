@@ -21,6 +21,8 @@ public class MasterMasonProgress : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
+        // Fill variables with the objects that are part of the 3d cross vault model,
+        // then disable them
         pillars = GameObject.Find("Pillars");
         arches = GameObject.Find("Arches");
         keystones = GameObject.Find("Keystones");
@@ -43,10 +45,15 @@ public class MasterMasonProgress : MonoBehaviour {
 		
 	}
 
+    /// <summary>
+    /// Function called by an object when it is placed in the correct position,
+    /// to progress the game
+    /// </summary>
     public void PlacedBlock()
     {
         blocksPlaced++;
 
+        // Check how many objects have been placed, then show the next part of the minigame when needed (show pillars when 4 bases have been placed, etc)
         switch (blocksPlaced)
         {
             case 4:
@@ -68,6 +75,7 @@ public class MasterMasonProgress : MonoBehaviour {
                 centrings.SetActive(false);
                 break;
 
+            // When all objects have been placed, finish game
             case 21:
                 top.SetActive(true);
                 PlayerPrefs.SetInt("MasterMasonCompleted", 1);

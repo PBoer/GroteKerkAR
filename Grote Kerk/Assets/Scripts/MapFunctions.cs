@@ -19,11 +19,11 @@ public class MapFunctions : MonoBehaviour {
 
     private void OnEnable()
     {
-        updateTimePieceMarker();
-        updateMiniGameMarker();
+        UpdateTimePieceMarker();
+        UpdateMiniGameMarker();
     }
 
-    private void updateMiniGameMarker()
+    private void UpdateMiniGameMarker()
     {
         var MinGamesDone = Resources.FindObjectsOfTypeAll<GameObject>().Where<GameObject>(g => g.CompareTag("MiniGameDone"));
         foreach (GameObject MinGameDone in MinGamesDone)
@@ -40,7 +40,7 @@ public class MapFunctions : MonoBehaviour {
         }
     }
 
-    private void updateTimePieceMarker()
+    private void UpdateTimePieceMarker()
     {
         var TimePiecesDone = Resources.FindObjectsOfTypeAll<GameObject>().Where<GameObject>(g => g.CompareTag("TimePieceDone"));
         foreach (GameObject TimePieceDone in TimePiecesDone)

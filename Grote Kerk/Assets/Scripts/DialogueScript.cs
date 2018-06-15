@@ -24,7 +24,9 @@ public class DialogueScript : MonoBehaviour {
         // Find out current scene and generate dialogue text
         scene = GameManager.Instance.GetCurrentScene();
         dialogueCanvas = GameObject.Find("DialogueCanvas");
+        CreateDialogue();
 
+        // Based on which scene player is in, set dialogueCount to the proper number
         switch (scene)
         {
             case "MasterMason":
@@ -40,9 +42,10 @@ public class DialogueScript : MonoBehaviour {
 
         }
 
-        CreateDialogue();
+        // Find text component and empty it
         myText = GetComponent<Text>();
         myText.text = "";
+
         // Check playerprefs to see if dialogue for this scene has played before
         // If it has, skip the dialogue, otherwise play the dialogue
         instructionsName = (scene + "Instructions");
@@ -67,17 +70,21 @@ public class DialogueScript : MonoBehaviour {
         crRunning = true;
         foreach (char letter in message.ToCharArray())
         {
-            //crRunning = true;
             myText.text += letter;
             yield return 0;
             yield return new WaitForSeconds(letterPause);
-            //crRunning = false;
         }
         crRunning = false;
     }
 
+
+    /// <summary>
+    /// Function to skip dialogue
+    /// </summary>
     public void SkipDialogue()
     {
+        // Check if player has seen the story before, if so, go to the map scene
+        // if not, go to the instructions screen
         if (scene == "Story")
         {
             if (PlayerPrefs.GetInt("StorySeen") == 1)
@@ -90,6 +97,9 @@ public class DialogueScript : MonoBehaviour {
             }
         }
 
+        // Check if current minigame has been completed, if so, go back to the main game scene
+        // If not, deactivate dialogue canvas to start the game,
+        // and set int in playerprefs so next time the game knows the player has seen this dialogue before
         if(gameFinished)
         {
             GameManager.Instance.ChangeScene("MainGame");
@@ -101,6 +111,9 @@ public class DialogueScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to progress the dialogue
+    /// </summary>
     public void ForwardDialogue()
     {
         // Check if text is still running. If it is, stop running it and show it instantly.
@@ -138,22 +151,25 @@ public class DialogueScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to show dialogue after finishing the minigame
+    /// </summary>
     public void FinishGame()
     {
+        // Set dialogueCount to proper number based on current scene
         switch (scene)
         {
             case "MasterMason":
                 dialogueCount = 6;
-                PlayerPrefs.SetInt("MasterMasonCompleted", 1);
                 break;
 
             case "Carpenter":
                 dialogueCount = 15;
-                PlayerPrefs.SetInt("CarpenterCompleted", 1);
                 break;
         
         }
 
+        // Show final dialogue and set gameFinished boolean to true
         gameFinished = true;
         dialogueCanvas.SetActive(true);
         myText.text = "";
@@ -161,12 +177,19 @@ public class DialogueScript : MonoBehaviour {
         StartCoroutine(TypeText());
     }
 
+    /// <summary>
+    /// Function used in ForwardDialogue to show the next line of text
+    /// </summary>
+    /// <param name="dialogueEnd"></param>
     private void ForwardText(int dialogueEnd)
     {
+        // If game has been finished, go back to main game scene
         if (gameFinished)
         {
             GameManager.Instance.ChangeScene("MainGame");
         }
+        // If game has not been finished and player is not at the final line of dialogue yet,
+        // start next line of dialogue
         else if (dialogueCount <= dialogueEnd)
         {
             myText.text = "";
@@ -175,14 +198,19 @@ public class DialogueScript : MonoBehaviour {
             StopAllCoroutines();
             StartCoroutine(TypeText());
         }
+        // If game has not been finished and player is at the final line of dialogue, call SkipDialogue to deactivate dialogue canvas
         else
         {
             SkipDialogue();
         }
     }
 
+    /// <summary>
+    /// Function to replay dialogue
+    /// </summary>
     public void ReplayDialogue()
     {
+        // If game has been finished, do nothing. Otherwise, reset dialogue
         if (!gameFinished)
         {
             switch (scene)
@@ -204,8 +232,13 @@ public class DialogueScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to go back a line in the dialogue
+    /// </summary>
     public void BackDialogue()
     {
+        // If game has been finished, do nothing. Otherwise, go back a line
+        // If dialogue is at the start, replay current line
         if (!gameFinished)
         {
             switch (scene)
@@ -214,8 +247,6 @@ public class DialogueScript : MonoBehaviour {
                     if (dialogueCount > 0)
                     {
                         dialogueCount -= 2;
-                        Debug.Log("minus");
-                        Debug.Log(dialogueCount);
                         BackText(0);
                     }
                     else
@@ -254,6 +285,10 @@ public class DialogueScript : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function used in BackDialogue to show the previous line of text
+    /// </summary>
+    /// <param name="dialogueStart"></param>
     private void BackText(int dialogueStart)
     {
         if(dialogueCount < dialogueStart)
@@ -261,15 +296,16 @@ public class DialogueScript : MonoBehaviour {
             dialogueCount++;
         }
         myText.text = "";
-        Debug.Log("Line " + dialogueCount);
         message = messages[dialogueCount];
         StopAllCoroutines();
         StartCoroutine(TypeText());
         dialogueCount++;
     }
 
-    // Create array with dialogue messages
-    // Keep messages at 230 or less characters (160 or less for minigame dialogue such as master mason)
+    /// <summary>
+    /// Function to create array with dialogue
+    /// Lines must be 160 characters or less to fit in the text fields
+    /// </summary>
     public void CreateDialogue()
     {
         messages = new List<string>
@@ -327,7 +363,7 @@ public class DialogueScript : MonoBehaviour {
     /// <summary>
     /// changest the imagery in a scene to acompainy the text
     /// </summary>
-    /// <param name="count"> Dialogcount</param>
+    /// <param name="count"> dialogueCount</param>
     public void ChangeImagery()
     {
         switch (scene)

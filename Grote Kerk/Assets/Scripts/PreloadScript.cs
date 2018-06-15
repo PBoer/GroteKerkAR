@@ -6,6 +6,7 @@ public class PreloadScript : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        // Once preload is complete, automatically move on to the main menu
         GameManager.Instance.ChangeScene("MainMenu");
 	}
 	

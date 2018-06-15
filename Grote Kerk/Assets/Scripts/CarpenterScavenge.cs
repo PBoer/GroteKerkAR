@@ -21,14 +21,18 @@ public class CarpenterScavenge : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        // Perform raycast if user clicks/taps the screen
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit hit;
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out hit))
             {
+                // If raycast hits something, check if the hit has the right tag
+                // If the tag is wrong, do nothing
                 if(hit.transform.tag == "Treadmill")
                 {
+                    // If tag is correct, destroy target and count up
                     Destroy(hit.transform.gameObject);
                     partsFound++;
                     if(partsFound == 1)
@@ -40,6 +44,7 @@ public class CarpenterScavenge : MonoBehaviour {
                         scavengerText.text = (partsFound + " delen van tredmolen gevonden");
                     }
 
+                    // When counter reaches 3, end scavenging part of the minigame
                     if(partsFound == 3)
                     {
                         gameUI.SetActive(true);

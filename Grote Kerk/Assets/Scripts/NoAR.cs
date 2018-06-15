@@ -26,8 +26,6 @@ public class NoAR : MonoBehaviour
             {
                 mainCamera.GetComponent<DefaultInitializationErrorHandler>().enabled = false;
             }
-
-            //mainCamera.clearFlags = CameraClearFlags.Skybox;
         }
     }
 

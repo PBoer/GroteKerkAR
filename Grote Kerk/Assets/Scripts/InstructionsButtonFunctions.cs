@@ -20,6 +20,9 @@ public class InstructionsButtonFunctions : MonoBehaviour {
     // Use this for initialization
     void Start() {
         DisablePanels();
+
+        // Check PlayerPrefs to see which instructions the player is allowed to see,
+        // then activate the tabs for those instructions
         foreach (GameObject contentButton in contentButtons)
         {
             switch (PlayerPrefs.GetInt(contentButton.name))
@@ -44,6 +47,9 @@ public class InstructionsButtonFunctions : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Function to disable all panels
+    /// </summary>
     public void DisablePanels()
     {
         foreach (GameObject contentPanel in contentPanels)
@@ -52,8 +58,12 @@ public class InstructionsButtonFunctions : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to return to previous scene
+    /// </summary>
     public void Back()
     {
+        // If previous scene was story, move on to map scene
         if (GameManager.Instance.getPreviousScene() == "Story")
         {
             GameManager.Instance.ChangeScene("Map");
@@ -64,30 +74,45 @@ public class InstructionsButtonFunctions : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to show panel containing instructions for the overall game
+    /// </summary>
     public void GameInstructions()
     {
         DisablePanels();
         contentPanels[GamePanel].SetActive(true);
     }
 
+    /// <summary>
+    /// Function to show panel containing instructions for master mason minigame
+    /// </summary>
     public void MasterMasonInstructions()
     {
         DisablePanels();
         contentPanels[MasterMasonPanel].SetActive(true);
     }
 
+    /// <summary>
+    /// Function to show panel containing instructions for stone cutter minigame
+    /// </summary>
     public void StoneCutterInstructions()
     {
         DisablePanels();
         contentPanels[StoneCutterPanel].SetActive(true);
     }
 
+    /// <summary>
+    /// Function to show panel containing instructions for glass worker minigame
+    /// </summary>
     public void GlassWorkerInstructions()
     {
         DisablePanels();
         contentPanels[GlassWorkerPanel].SetActive(true);
     }
 
+    /// <summary>
+    /// Function to show panel containing instructions for carpenter minigame
+    /// </summary>
     public void CarpenterInstructions()
     {
         DisablePanels();

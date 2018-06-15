@@ -6,11 +6,7 @@ public class DisableOverlay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        // Disable the navigation bar overlay in any scene this object is in
         GameManager.Instance.DisableOverlay();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

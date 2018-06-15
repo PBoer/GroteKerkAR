@@ -6,11 +6,7 @@ public class EnableOverlay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        // Enable navigation bar overlay in any scene this object is in
         GameManager.Instance.EnableOverlay();
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }

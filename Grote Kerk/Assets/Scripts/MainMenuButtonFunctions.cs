@@ -14,9 +14,13 @@ public class MainMenuButtonFunctions : MonoBehaviour {
 		
 	}
 
+    /// <summary>
+    /// Function to start the game
+    /// </summary>
     public void StartGame()
     {
-        Debug.Log("storyseen = "+ PlayerPrefs.GetInt("StorySeen"));
+        // Check if player has already seen story,
+        // if so, move to map scene. If not, move to story scene
         if (PlayerPrefs.GetInt("StorySeen") == 1)
         {
             GameManager.Instance.ChangeScene("Map");
@@ -28,11 +32,17 @@ public class MainMenuButtonFunctions : MonoBehaviour {
         
     }
 
+    /// <summary>
+    /// Function to change to the instructions scene
+    /// </summary>
     public void Instructions()
     {
         GameManager.Instance.ChangeScene("Instructions");
     }
 
+    /// <summary>
+    /// Function to change to the settings scene
+    /// </summary>
     public void Settings()
     {
         GameManager.Instance.ChangeScene("Settings");

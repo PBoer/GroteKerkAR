@@ -14,11 +14,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
 		
 	}
 
+    /// <summary>
+    /// Function to move to the story scene
+    /// </summary>
     public void Story()
     {
         if (GameManager.Instance.GetCurrentScene() == "Story")
         {
-            Debug.Log("Already in test scene");
+            Debug.Log("Already in scene");
         }
         else
         {
@@ -26,11 +29,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to move to the main game scene
+    /// </summary>
     public void Scanner()
     {
         if(GameManager.Instance.GetCurrentScene() == "MainGame")
         {
-            Debug.Log("Already in test scene");
+            Debug.Log("Already in scene");
         }
         else
         {
@@ -38,11 +44,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to move to the map scene
+    /// </summary>
     public void Map()
     {
         if (GameManager.Instance.GetCurrentScene() == "Map")
         {
-            Debug.Log("Already in test scene");
+            Debug.Log("Already in scene");
         }
         else
         {
@@ -50,16 +59,23 @@ public class NavBarButtonFunctions : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to move to the hints screen
+    /// Currently not implemented
+    /// </summary>
     public void Hints()
     {
         Debug.Log("TODO go to hints screen");
     }
 
+    /// <summary>
+    /// Function to move to the timeline scene
+    /// </summary>
     public void Timeline()
     {
         if (GameManager.Instance.GetCurrentScene() == "Timeline")
         {
-            Debug.Log("Already in test scene");
+            Debug.Log("Already in scene");
         }
         else
         {
@@ -67,11 +83,14 @@ public class NavBarButtonFunctions : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to move to the technical explanation scene
+    /// </summary>
     public void TechnicalExplanation()
     {
         if (GameManager.Instance.GetCurrentScene() == "TechnicalExplanation")
         {
-            Debug.Log("Already in test scene");
+            Debug.Log("Already in scene");
         }
         else
         {
@@ -79,6 +98,9 @@ public class NavBarButtonFunctions : MonoBehaviour {
         }
     }
 
+    /// <summary>
+    /// Function to move to the settings scene
+    /// </summary>
     public void Settings()
     {
         GameManager.Instance.ChangeScene("Settings");

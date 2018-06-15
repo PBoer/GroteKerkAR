@@ -32,15 +32,24 @@ public class CarpenterProgress : MonoBehaviour {
 		
 	}
 
+    /// <summary>
+    /// Function to enable second part of the minigame, placement of treadmill parts,
+    /// by enabling objects on which player has to drag the found parts
+    /// </summary>
     public void EndScavenge()
     {
         treadmillBase.SetActive(true);
     }
 
+    /// <summary>
+    /// Function to count the amount of parts placed and act accordingly
+    /// </summary>
     public void PlacedPart()
     {
         partsPlaced++;
 
+        // If only one or two parts have been placed, enable next object on which player has to drag parts
+        // If three parts have been placed, end minigame
         switch (partsPlaced)
         {
             case 1:
